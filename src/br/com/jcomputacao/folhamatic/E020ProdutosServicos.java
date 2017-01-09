@@ -1,6 +1,9 @@
 package br.com.jcomputacao.folhamatic;
 
+import br.com.jcomputacao.aristoteles.field.FieldDateFixedLengthArchetype;
+import br.com.jcomputacao.aristoteles.field.FieldDecimalFixedLengthArchetype;
 import br.com.jcomputacao.aristoteles.field.FieldDefaultArchetype;
+import br.com.jcomputacao.aristoteles.field.FieldEnumFixedLengthArchetype;
 import br.com.jcomputacao.aristoteles.field.FieldIntegerFixedLengthArchetype;
 import br.com.jcomputacao.aristoteles.field.FieldStringFixedLengthArchetype;
 import br.com.jcomputacao.aristoteles.line.LineArchetype;
@@ -31,11 +34,11 @@ public class E020ProdutosServicos extends LineArchetype {
      */
     public static final String DESCRICAO = "DESCRICAO";
     /**
-     * 04 - Tipo D Tamanho 8</br>
-     * DATA DA INCLUSÃO DO PRODUTO/SERVIÇO</br>
-     * Informe a Data de Inclusão no formato AAAAMMDD</br>
-     * dos dados do produto/serviço no cadastro.</br>
-     * Campo obrigatório.</br>
+     * <br>04 - Tipo D Tamanho 8</br>
+     * <br>DATA DA INCLUSÃO DO PRODUTO/SERVIÇO</br>
+     * <br>Informe a Data de Inclusão no formato AAAAMMDD</br>
+     * <br>dos dados do produto/serviço no cadastro.</br>
+     * <br>Campo obrigatório.</br>
      */
     public static final String DATA_INCLUSAO = "DATA_INCLUSAO";
     /**
@@ -225,7 +228,7 @@ public class E020ProdutosServicos extends LineArchetype {
      */
     public static final String CODIGO_PRODUTO_DNF = "CODIGO_PRODUTO_DNF";
     /**
-     * 21 - Tipo N Tamanho 14</br>
+     * 21 - Tipo N Tamanho 14,3</br>
      * FATOR DE CONV. PARA A UNID. MED. EST. (DNF)</br>
      * Informar este campo se a empresa entrega DNF</br>
      * e apenas se o produto for válido para DNF conforme tabela de produtos</br>
@@ -237,135 +240,240 @@ public class E020ProdutosServicos extends LineArchetype {
      */
     public static final String FATOR_CONVERSAO_UNIDADE_MEDIDA_ESTOQUE_DNF = "FATOR_CONVERSAO_UNIDADE_MEDIDA_ESTOQUE_DNF";
     /**
-     * 22 - 
-     * CAPACIDADE VOLUMÉTRICA (ML) - (DNF) - Este campo deve ser preenchido apenas se a empresa entrega DNF e se o NBM/SH for: 3923.21.10, 3923.21.90, 3923.30.00, 4811.51.22, 4811.59.23, 7010.90.11, 7010.90.21, 7010.90.90, 7310.21.10, 7310.29.10 e 7612.90.19, neste caso, o preenchimento deste campo é obrigatório. Não sendo esta situação, informe zeros.
-N 5 305 309
-Informe a capacidade volumétrica (ml) do produto.</br>
-* OBS: Este campo deverá ser preenchido para geração da DNF a partir de 09/2004.</br>
+     * 22 - Tipo N Tamanho 5</br>
+     * CAPACIDADE VOLUMÉTRICA (ML) - (DNF)</br>
+     * Este campo deve ser preenchido apenas se a empresa entrega DNF</br>
+     * e se o NBM/SH for: 3923.21.10, 3923.21.90, 3923.30.00, 4811.51.22</br>
+     * 4811.59.23, 7010.90.11, 7010.90.21, 7010.90.90, 7310.21.10, 7310.29.10 </br>
+     * e 7612.90.19, neste caso, o preenchimento deste campo é obrigatório.</br>
+     * Não sendo esta situação, informe zeros.</br>
+     * Informe a capacidade volumétrica (ml) do produto.</br>
+     * OBS: Este campo deverá ser preenchido para geração da DNF a partir de 09/2004.</br>
      */
     public static final String CAPACIDADE_VOLUMETRICA_DNF = "CAPACIDADE_VOLUMETRICA_DNF";
     /**
-     * 
+     * 23 - Tipo N Tamanho 5,2</br>
+     * IPI_ALIQUOTA</br>
+     * Informe a alíquota de IPI do produto.</br>
+     * Quando o Tipo do Produto (campo 10) for 09-Serviços</br>
+     * informe zeros neste campo</br>
      */
     public static final String IPI_ALIQUOTA = "IPI_ALIQUOTA";
     /**
-     * 
+     * 24 - Tipo N Tamanho 5,2</br>
+     * IPI_SUBSTITUICAO_TRIBUTARIA</br>
+     * Informe o código da Situação Tributária referente ao IPI</br>
+     * conforme Tabela da Situação Tributária do IPI.</br>
+     * Quando o Tipo do Produto (campo 10) for 09-Serviços</br>
+     * preencha este campo com espaços.</br>
      */
     public static final String IPI_SUBSTITUICAO_TRIBUTARIA = "IPI_SUBSTITUICAO_TRIBUTARIA";
     /**
-     * 
+     * 25 - Tipo X Tamanho 5</br>
+     * Quando o tipo do produto (campo 10) for 09-Serviços</br>
+     * informe o código do serviço conforme Tabela de Serviços da LC 116/2003</br>
+     * informando ponto no código.</br>
+     * Para os códigos com tamanho menor, deixar espaços à direita.</br>
+     * Exemplo: 1.01</br>
      */
     public static final String SERVICOS_LC116_03 = "SERVICOS_LC_116_03";
     /**
-     * 
+     * 26 - Tipo X Tamanho 50</br>
+     * CONTA ANALÍTICA CONTÁBIL</br>
+     * Informe a conta analítica contábil do produto/serviço.</br>
      */
     public static final String CONTA_ANALITICA_CONTABIL = "CONTA_ANALITICA_CONTABIL";
     /**
-     * 
+     * 27 - Tipo N Tamanho 7,4</br>
+     * Informe a Alíquota do ICMS aplicável</br>
+     * a mercadoria ou serviço nas operações ou prestações internas.</br>
      */
     public static final String ICMS_ALIQUOTA = "ICMS_ALIQUOTA";
     /**
-     * 
+     * 28 - Tipo N Tamanho 7,4</br>
+     * Informe a Alíquota do ICMS aplicável a mercadoria</br>
+     * ou serviço nas operações ou prestações internas.</br>
      */
     public static final String ICMS_ALIQUOTA_ADICIONAL = "ICMS_ALIQUOTA_ADICIONAL";
     /**
-     * 
+     * 29 - Tipo FolhamatricSimNao</br>
+     * ADICIONAL ALÍQ. ICMS (RJ)</br>
+     * Informe "S" se a empresa for do estado do Rio de Janeiro</br>
+     * e houver adicional de ICMS na alíquota referente</br>
+     * ao Fundo de Combate a Pobreza, caso contrário informe "N".</br>
      */
     public static final String ICMS_ALIQUOTA_ADICIONAL_RJ = "ICMS_ALIQUOTA_ADICIONAL_RJ";
     /**
-     * 
+     * 30 - Tipo N Tamanho 7,4</br>
+     * % RED. BASE CÁLC. ICMS</br>
+     * Informe o percentual de redução na base de</br>
+     * cálculo do ICMS nas operações internas.</br>
      */
     public static final String ICMS_BASE_CALCULO_REDUCAO = "ICMS_BASE_CALCULO_REDUCAO";
     /**
-     * 
+     * 31 - Tipo N Tamanho 14,2</br> 
+     * UNIT. BASE ICMS ST</br>
+     * Informe o valor unitário da base de cálculo</br>
+     * do ICMS na substituição tributária.</br>
      */
     public static final String ICMS_BASE_VALOR_UNITARIO = "ICMS_BASE_VALOR_UNITARIO";
     /**
-     * 
+     * 32 - Tipo A Tamanho 1</br> 
+     * SIT.TRIB. ICMS TAB. A - Informe o código da Situação Tributária referente ao ICMS conforme Tabela A - Situação Tributária do ICMS. Quando for CSOSN, preencher este campo com espaço.
      */
     public static final String ICMS_SITUACAO_TRIBUTARIA_TABELA_A = "ICMS_SITUACAO_TRIBUTARIA_TABELA_A";
     /**
-     * 
+     * 33 - Tipo A Tamanho 2</br> 
+     * SIT.TRIB. ICMS TAB. B</br>
+     * Informe o código da Situação Tributária referente ao ICMS</br>
+     * conforme Tabela B - Situação Tributária do ICMS.</br>
+     * Quando for CSOSN, preencher este campo com espaços.</br>
      */
     public static final String ICMS_SITUACAO_TRIBUTARIA_TABELA_B = "ICMS_SITUACAO_TRIBUTARIA_TABELA_B";
     /**
-     * 
+     * 34 - Tipo A Tamanho 2</br> 
+     * SIT. TRIB. PIS</br>
+     * Informe o código da Situação Tributária referente ao PIS</br>
+     * conforme Tabela da Situação Tributária do PIS.</br>
      */
     public static final String PIS_SITUACAO_TRIBUTARIA = "PIS_SITUACAO_TRIBUTARIA";
     /**
-     * 
+     * 35 - Tipo A Tamanho 2</br> 
+     * SIT. TRIB. COFINS</br>
+     * Informe o código da Situação Tributária referente ao COFINS</br>
+     * conforme Tabela da Situação Tributária da COFINS.</br>
      */
     public static final String COFINS_SITUACAO_TRIBUTARIA = "COFINS_SITUACAO_TRIBUTARIA";
     /**
-     * 
+     * 36 - Tipo A Tamanho 1</br> 
+     * TIPO DE INCIDÊNCIA</br>
+     * Informe “1” se o produto pertence à Incidência Cumulativa ou</br>
+     * “2” se o produto pertence a Incidência Não Cumulativa de PIS/COFINS.</br>
+     * Somente preencha este campo, quando sua empresa</br>
+     * se tratar de Empresa Mista (cadastro da empresa</br>
+     * com opção “Incidência nos Regimes Cumulativo e Não Cumulativo”</br>
+     * no botão Configurações EFD PIS/COFINS).</br>
+     * Caso sua empresa não se enquadre nesta condição</br>
+     * preencha o campo com espaço.</br>
      */
     public static final String PIS_COFINS_TIPO_INCIDENCIA = "PIS_COFINS_TIPO_INCIDENCIA";
     /**
-     * 
+     * 37 - Tipo A Tamanho 3</br> 
+     * TABELA (BEBIDAS FRIAS - ANEXO III)</br> 
+     * Informe a tabela que ser refere o produto.</br> 
+     * Somente preencha este campo, quando sua empresa</br> 
+     * estiver enquadrada no Regime Especial de Apuração</br> 
+     * (cadastro da empresa, com opção “Regime Especial de Apuração”</br>
+     * selecionada no botão Configurações EFD PIS/COFINS).</br>
+     * Caso sua empresa não se enquadre nesta condição,</br> 
+     * preencha o campo com espaços.</br> 
+     * Importante: A informação inserida neste campo</br> 
+     * deverá existir no menu Arquivos, Tabelas “Bebidas Frias - Anexo III”.</br> 
      */
     public static final String PIS_COFINS_TABELA_BEBIDAS_FRIAS = "PIS_COFINS_TABELA_BEBIDAS_FRIAS";
     /**
-     * 
+     * 38 - Tipo A Tamanho 2</br> 
+     * CÓDIGO DO GRUPO</br>
+     * Informe o código de grupo que ser refere o produto.</br>
+     * Somente preencha este campo, quando sua empresa estiver</br>
+     * enquadrada no Regime Especial de Apuração</br>
+     * (cadastro da empresa, com opção “Regime Especial de Apuração”</br>
+     * selecionada no botão Configurações EFD PIS/COFINS).</br>
+     * Se houver informação no campo 37, esse campo torna-se obrigatório.</br>
+     * Caso sua empresa não se enquadre nesta condição</br>
+     * preencha o campo com espaços.</br>
+     * Importante: A informação inserida neste campo deverá</br>
+     * existir no menu Arquivos, Tabelas “Bebidas Frias - Anexo III”.</br>
      */
     public static final String GRUPO_REGIME_ESPECIAL = "GRUPO_REGIME_ESPECIAL";
     /**
-     * 
+     * 39 - Tipo A Tamanho 60</br> 
+     * MARCA COMERCIAL</br>
+     * Informe a marca comercial que ser refere o produto.</br>
+     * Somente preencha este campo, quando sua empresa</br>
+     * estiver enquadrada no Regime Especial de Apuração</br>
+     * (cadastro da empresa, com opção “Regime Especial de Apuração”</br>
+     * selecionada no botão Configurações EFD PIS/COFINS).</br>
+     * Se houver informação no campo 37, esse campo torna-se obrigatório.</br>
+     * Caso sua empresa não se enquadre nesta condição,</br>
+     * preencha o campo com espaços.</br>
+     * Importante: A informação inserida neste campo deverá existir</br>
+     * no menu Arquivos, Tabelas “Bebidas Frias - Anexo III”.</br>
      */
     public static final String MARCA = "MARCA";
     /**
-     * 
+     * 40 - Tipo A Tamanho 5</br> 
+     * CÓDIGO SEFAZ - MG</br>
+     * Para o Estado de MG, se sua empresa entrega o arquivo magnético GAM57-CBT</br>
+     * para o produto combustível, é obrigatória a informação do código SEFAZ</br>
+     * conforme tabela “Códigos de Combustível da SEFAZ - MG”</br>
+     * caso contrário preencha este campo com espaços.</br>
      */
     public static final String CODIGO_SEFAZ_MG = "CODIGO_SEFAZ_MG";
     /**
-     * 
+     * 41
+     * CONTROLE DO SISTEMA</br> 
+     * Informe "0" (zero) para controle interno do Sistema E-Fiscal.</br> 
      */
     public static final String CONTROLE_SISTEMA = "CONTROLE_SISTEMA";
 
     public E020ProdutosServicos() {
         setName("Folhamatic - Produto ou Serviço");
+        
+        FieldDecimalFixedLengthArchetype faip = new FieldDecimalFixedLengthArchetype(7, 4);
+        
+        FieldEnumFixedLengthArchetype fef = new FieldEnumFixedLengthArchetype(1, FieldEnumFixedLengthArchetype.EnumType.STRING);
+        fef.setAcceptNullable(true);
+        fef.setFullFillingNullable(true);
+        fef.setFullFiling('N');
+        
+        FieldDateFixedLengthArchetype faa = new FieldDateFixedLengthArchetype("yyyyMMdd");
+        faa.setAcceptNullable(true);
+        faa.setFullFillingNullable(true);
+        faa.setFullFiling(' ');
 
         //01
         addFieldArchetype(NOME_REGISTRO, new FieldDefaultArchetype("E020"));
-        addFieldArchetype(CODIGO_PRODUTO_SERVICO, new FieldIntegerFixedLengthArchetype(6));
+        addFieldArchetype(CODIGO_PRODUTO_SERVICO, new FieldStringFixedLengthArchetype(6));
         addFieldArchetype(DESCRICAO, new FieldStringFixedLengthArchetype(50));
 
-        addFieldArchetype(DATA_INCLUSAO, new FieldStringFixedLengthArchetype(50));
-        addFieldArchetype(DATA_ALTERACAO_DESCRICAO, new FieldStringFixedLengthArchetype(50));
-        addFieldArchetype(PERIODO_INICIAL_UTILIZACAO_PRODUTO_SERVICO, new FieldStringFixedLengthArchetype(50));
-        addFieldArchetype(PERIODO_FINAL_UTILIZACAO_PRODUTO_SERVICO, new FieldStringFixedLengthArchetype(50));
-        addFieldArchetype(CODIGO_ANTERIOR, new FieldStringFixedLengthArchetype(50));
-        addFieldArchetype(GENERO, new FieldStringFixedLengthArchetype(50));
-        addFieldArchetype(TIPO, new FieldStringFixedLengthArchetype(50));
-        addFieldArchetype(TIPO_INVENTARIO, new FieldStringFixedLengthArchetype(50));
-        addFieldArchetype(NBM, new FieldStringFixedLengthArchetype(50));
-        addFieldArchetype(CODIGO_BARRAS, new FieldStringFixedLengthArchetype(50));
-        addFieldArchetype(COMBUSTIVEL_SOLVENTE, new FieldStringFixedLengthArchetype(50));
-        addFieldArchetype(CODIGO_SEFAZ, new FieldStringFixedLengthArchetype(50));
-        addFieldArchetype(CODIGO_ANP, new FieldStringFixedLengthArchetype(50));
-        addFieldArchetype(CODIGO_UNIDADE_COMERCIAL, new FieldStringFixedLengthArchetype(50));
-        addFieldArchetype(CODIGO_UNIDADE_ESTOQUE, new FieldStringFixedLengthArchetype(50));
-        addFieldArchetype(FATOR_CONVERSAO, new FieldStringFixedLengthArchetype(50));
-        addFieldArchetype(CODIGO_PRODUTO_DNF, new FieldStringFixedLengthArchetype(50));
-        addFieldArchetype(FATOR_CONVERSAO_UNIDADE_MEDIDA_ESTOQUE_DNF, new FieldStringFixedLengthArchetype(50));
-        addFieldArchetype(CAPACIDADE_VOLUMETRICA_DNF, new FieldStringFixedLengthArchetype(50));
-        addFieldArchetype(IPI_ALIQUOTA, new FieldStringFixedLengthArchetype(50));
-        addFieldArchetype(IPI_SUBSTITUICAO_TRIBUTARIA, new FieldStringFixedLengthArchetype(50));
-        addFieldArchetype(SERVICOS_LC116_03, new FieldStringFixedLengthArchetype(50));
+        addFieldArchetype(DATA_INCLUSAO, faa);
+        addFieldArchetype(DATA_ALTERACAO_DESCRICAO, faa);
+        addFieldArchetype(PERIODO_INICIAL_UTILIZACAO_PRODUTO_SERVICO, faa);
+        addFieldArchetype(PERIODO_FINAL_UTILIZACAO_PRODUTO_SERVICO, faa);
+        addFieldArchetype(CODIGO_ANTERIOR, new FieldStringFixedLengthArchetype(14));
+        addFieldArchetype(GENERO, new FieldStringFixedLengthArchetype(2));
+        addFieldArchetype(TIPO, new FieldStringFixedLengthArchetype(2));
+        addFieldArchetype(TIPO_INVENTARIO, new FieldIntegerFixedLengthArchetype(4));
+        addFieldArchetype(NBM, new FieldStringFixedLengthArchetype(15));
+        addFieldArchetype(CODIGO_BARRAS, new FieldStringFixedLengthArchetype(100));
+        addFieldArchetype(COMBUSTIVEL_SOLVENTE, fef);
+        addFieldArchetype(CODIGO_SEFAZ, new FieldStringFixedLengthArchetype(4));
+        addFieldArchetype(CODIGO_ANP, new FieldStringFixedLengthArchetype(9));
+        addFieldArchetype(CODIGO_UNIDADE_COMERCIAL, new FieldStringFixedLengthArchetype(6));
+        addFieldArchetype(CODIGO_UNIDADE_ESTOQUE, new FieldStringFixedLengthArchetype(6));
+        addFieldArchetype(FATOR_CONVERSAO, new FieldDecimalFixedLengthArchetype(14, 6));
+        addFieldArchetype(CODIGO_PRODUTO_DNF, new FieldIntegerFixedLengthArchetype(3));
+        addFieldArchetype(FATOR_CONVERSAO_UNIDADE_MEDIDA_ESTOQUE_DNF, new FieldDecimalFixedLengthArchetype(14, 3));
+        addFieldArchetype(CAPACIDADE_VOLUMETRICA_DNF, new FieldIntegerFixedLengthArchetype(5));
+        addFieldArchetype(IPI_ALIQUOTA, new FieldDecimalFixedLengthArchetype(5, 2));
+        addFieldArchetype(IPI_SUBSTITUICAO_TRIBUTARIA, new FieldStringFixedLengthArchetype(2));
+        addFieldArchetype(SERVICOS_LC116_03, new FieldStringFixedLengthArchetype(5));
         addFieldArchetype(CONTA_ANALITICA_CONTABIL, new FieldStringFixedLengthArchetype(50));
-        addFieldArchetype(ICMS_ALIQUOTA, new FieldStringFixedLengthArchetype(50));
-        addFieldArchetype(ICMS_ALIQUOTA_ADICIONAL, new FieldStringFixedLengthArchetype(50));
-        addFieldArchetype(ICMS_ALIQUOTA_ADICIONAL_RJ, new FieldStringFixedLengthArchetype(50));
-        addFieldArchetype(ICMS_BASE_CALCULO_REDUCAO, new FieldStringFixedLengthArchetype(50));
-        addFieldArchetype(ICMS_BASE_VALOR_UNITARIO, new FieldStringFixedLengthArchetype(50));
-        addFieldArchetype(ICMS_SITUACAO_TRIBUTARIA_TABELA_A, new FieldStringFixedLengthArchetype(50));
-        addFieldArchetype(ICMS_SITUACAO_TRIBUTARIA_TABELA_B, new FieldStringFixedLengthArchetype(50));
-        addFieldArchetype(PIS_SITUACAO_TRIBUTARIA, new FieldStringFixedLengthArchetype(50));
-        addFieldArchetype(COFINS_SITUACAO_TRIBUTARIA, new FieldStringFixedLengthArchetype(50));
-        addFieldArchetype(PIS_COFINS_TIPO_INCIDENCIA, new FieldStringFixedLengthArchetype(50));
-        addFieldArchetype(PIS_COFINS_TABELA_BEBIDAS_FRIAS, new FieldStringFixedLengthArchetype(50));
-        addFieldArchetype(GRUPO_REGIME_ESPECIAL, new FieldStringFixedLengthArchetype(50));
-        addFieldArchetype(MARCA, new FieldStringFixedLengthArchetype(50));
-        addFieldArchetype(CODIGO_SEFAZ_MG, new FieldStringFixedLengthArchetype(50));
+        addFieldArchetype(ICMS_ALIQUOTA, faip);
+        addFieldArchetype(ICMS_ALIQUOTA_ADICIONAL, faip);
+        addFieldArchetype(ICMS_ALIQUOTA_ADICIONAL_RJ, fef);
+        addFieldArchetype(ICMS_BASE_CALCULO_REDUCAO, faip);
+        addFieldArchetype(ICMS_BASE_VALOR_UNITARIO, new FieldDecimalFixedLengthArchetype(14,2));
+        addFieldArchetype(ICMS_SITUACAO_TRIBUTARIA_TABELA_A, new FieldStringFixedLengthArchetype(1));
+        addFieldArchetype(ICMS_SITUACAO_TRIBUTARIA_TABELA_B, new FieldStringFixedLengthArchetype(2));
+        addFieldArchetype(PIS_SITUACAO_TRIBUTARIA, new FieldStringFixedLengthArchetype(2));
+        addFieldArchetype(COFINS_SITUACAO_TRIBUTARIA, new FieldStringFixedLengthArchetype(2));
+        addFieldArchetype(PIS_COFINS_TIPO_INCIDENCIA, new FieldStringFixedLengthArchetype(1));
+        addFieldArchetype(PIS_COFINS_TABELA_BEBIDAS_FRIAS, new FieldStringFixedLengthArchetype(3));
+        addFieldArchetype(GRUPO_REGIME_ESPECIAL, new FieldStringFixedLengthArchetype(2));
+        addFieldArchetype(MARCA, new FieldStringFixedLengthArchetype(60));
+        addFieldArchetype(CODIGO_SEFAZ_MG, new FieldStringFixedLengthArchetype(5));
         addFieldArchetype(CONTROLE_SISTEMA, new FieldDefaultArchetype("0"));
     }
 
