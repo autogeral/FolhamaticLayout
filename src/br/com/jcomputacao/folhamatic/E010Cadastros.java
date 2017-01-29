@@ -155,13 +155,31 @@ public class E010Cadastros extends LineArchetype {
         addFieldArchetype(CIDADE_IBGE, new FieldIntegerFixedLengthArchetype(7));
         addFieldArchetype(CEP, new FieldIntegerFixedLengthArchetype(8));
         addFieldArchetype(PAIS, new FieldIntegerFixedLengthArchetype(5));
-        addFieldArchetype(CPF_CNPJ, new FieldStringFixedLengthArchetype(14));
-        addFieldArchetype(IE, new FieldStringFixedLengthArchetype(18));
-        addFieldArchetype(IM, new FieldStringFixedLengthArchetype(14));
-        addFieldArchetype(INSCRICAO_SUFRAMA, new FieldStringFixedLengthArchetype(9));
-        addFieldArchetype(CONTATO, new FieldStringFixedLengthArchetype(35));
-        addFieldArchetype(TELEFONE, new FieldStringFixedLengthArchetype(16));
-        addFieldArchetype(FAX, new FieldStringFixedLengthArchetype(16));
+        FieldStringFixedLengthArchetype f = new FieldStringFixedLengthArchetype(14);
+        f.setAcceptNullable(true);
+        addFieldArchetype(CPF_CNPJ, f);
+        
+        f = new FieldStringFixedLengthArchetype(18);
+        f.setAcceptNullable(true);
+        addFieldArchetype(IE, f);
+        
+        f = new FieldStringFixedLengthArchetype(14);
+        f.setAcceptNullable(true);
+        addFieldArchetype(IM, f);
+        
+        f = new FieldStringFixedLengthArchetype(9);
+        f.setAcceptNullable(true);
+        addFieldArchetype(INSCRICAO_SUFRAMA, f);
+        
+        f = new FieldStringFixedLengthArchetype(35);
+        f.setAcceptNullable(true);
+        addFieldArchetype(CONTATO, f);
+        
+        f = new FieldStringFixedLengthArchetype(16);
+        f.setAcceptNullable(true);
+        addFieldArchetype(TELEFONE, f);
+        addFieldArchetype(FAX, f);
+        
         addFieldArchetype(DATA_ALTERACAO_CADASTRAL_E_FISCAL, faa);
         FieldEnumFixedLengthArchetype fef = new FieldEnumFixedLengthArchetype(1, FieldEnumFixedLengthArchetype.EnumType.STRING);
         fef.setAcceptNullable(true);
@@ -174,19 +192,26 @@ public class E010Cadastros extends LineArchetype {
         addFieldArchetype(FORNECEDOR_SUBSTITO_TRIBUTARIO, fef);
         addFieldArchetype(SIMPLES_NACIONAL, fef);
         addFieldArchetype(INSCRITO_MUNICIPIO, fef);
-        addFieldArchetype(EMAIL_CONTATO, new FieldStringFixedLengthArchetype(100));
-        addFieldArchetype(WEB_SITE, new FieldStringFixedLengthArchetype(100));
+        
+        f = new FieldStringFixedLengthArchetype(100);
+        f.setAcceptNullable(true);
+        addFieldArchetype(EMAIL_CONTATO, f);
+        addFieldArchetype(WEB_SITE, f);
+        
         addFieldArchetype(HOSPEDAGE_SITE, fef);
-        addFieldArchetype(HOSPEDAGE_SITE_ENDERECO_IP, new FieldStringFixedLengthArchetype(15));
-        addFieldArchetype(HOSPEDAGE_SITE_URL, new FieldStringFixedLengthArchetype(100));
+        
+        FieldStringFixedLengthArchetype f15 = new FieldStringFixedLengthArchetype(15);
+        f15.setAcceptNullable(true);
+        addFieldArchetype(HOSPEDAGE_SITE_ENDERECO_IP, f15);
+        addFieldArchetype(HOSPEDAGE_SITE_URL, f);
         addFieldArchetype(HOSPEDAGE_SITE_INICIO_CONTRATO, faa);
         addFieldArchetype(HOSPEDAGE_SITE_FINAL_CONTRATO, faa);
         addFieldArchetype(GATEWAY_PAGAMENTO, fef);
         addFieldArchetype(GATEWAY_PAGAMENTO_INICIO_CONTRATO, faa);
         addFieldArchetype(GATEWAY_PAGAMENTO_FINAL_CONTRATO, faa);
         addFieldArchetype(LOJA_VIRTUAL, fef);
-        addFieldArchetype(LOJA_VIRTUAL_ENDERECO_IP, new FieldStringFixedLengthArchetype(15));
-        addFieldArchetype(LOJA_VIRTUAL_ENDERECO_WEB, new FieldStringFixedLengthArchetype(100));
+        addFieldArchetype(LOJA_VIRTUAL_ENDERECO_IP, f15);
+        addFieldArchetype(LOJA_VIRTUAL_ENDERECO_WEB, f);
         addFieldArchetype(LOJA_VIRTUAL_INICIO_CONTRATO, faa);
         addFieldArchetype(LOJA_VIRTUAL_FINAL_CONTRATO, faa);
     }

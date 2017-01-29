@@ -93,13 +93,30 @@ public class E020ProdutosServicos extends LineArchetype {
      * 09 - Tipo A Tamanho 2</br>
      * GÊNERO DO ITEM - Informe o código do gênero do item</br>
      * conforme Tabela Códigos de Gênero do Item.</br>
+     * Confome tabela de Gênero dos produtos, tabela 4.2.1 do manual:</br>
+     * <a href="https://www.fazenda.sp.gov.br/sped/downloads/GUIA_PRATICO_EFD_Versao_2_0_6.pdf">GRIA_PRATICO_EFD_Versao_2_0_6.pdf</a></br>
      */
     public static final String GENERO = "GENERO";
     /**
      * 10 - Tipo A Tamanho 2</br>
      * TIPO DO PRODUTO</br>
      * Informe o código do tipo do produto</br>
-     * conforme Tabela Tipos de Produtos.</br>
+     * conforme Tabela Tipos de Produtos na pagina 17 do manual :</br>
+     * <a href="https://www.fazenda.sp.gov.br/sped/downloads/GUIA_PRATICO_EFD_Versao_2_0_6.pdf">GRIA_PRATICO_EFD_Versao_2_0_6.pdf</a></br>
+     * Tipo do item – Atividades Industriais, Comerciais e</br>
+     * Serviços:</br>
+     * 00 – Mercadoria para Revenda;</br>
+     * 01 – Matéria-Prima;</br>
+     * 02 – Embalagem;</br>
+     * 03 – Produto em Processo;</br>
+     * 04 – Produto Acabado;</br>
+     * 05 – Subproduto;</br>
+     * 06 – Produto Intermediário;</br>
+     * 07 – Material de Uso e Consumo;</br>
+     * 08 – Ativo Imobilizado;</br>
+     * 09 – Serviços;</br>
+     * 10 – Outros insumos;</br>
+     * 99 – Outras </br>
      */
     public static final String TIPO = "TIPO";
     /**
@@ -441,7 +458,10 @@ public class E020ProdutosServicos extends LineArchetype {
         addFieldArchetype(DATA_ALTERACAO_DESCRICAO, faa);
         addFieldArchetype(PERIODO_INICIAL_UTILIZACAO_PRODUTO_SERVICO, faa);
         addFieldArchetype(PERIODO_FINAL_UTILIZACAO_PRODUTO_SERVICO, faa);
-        addFieldArchetype(CODIGO_ANTERIOR, new FieldStringFixedLengthArchetype(14));
+        FieldStringFixedLengthArchetype f = new FieldStringFixedLengthArchetype(14);
+        f.setAcceptNullable(true);
+        addFieldArchetype(CODIGO_ANTERIOR, f);
+        
         addFieldArchetype(GENERO, new FieldStringFixedLengthArchetype(2));
         addFieldArchetype(TIPO, new FieldStringFixedLengthArchetype(2));
         addFieldArchetype(TIPO_INVENTARIO, new FieldIntegerFixedLengthArchetype(4));
