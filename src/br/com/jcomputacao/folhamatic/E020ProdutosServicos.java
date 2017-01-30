@@ -466,13 +466,19 @@ public class E020ProdutosServicos extends LineArchetype {
         addFieldArchetype(TIPO, new FieldStringFixedLengthArchetype(2));
         addFieldArchetype(TIPO_INVENTARIO, new FieldIntegerFixedLengthArchetype(4));
         addFieldArchetype(NBM, new FieldStringFixedLengthArchetype(15));
-        addFieldArchetype(CODIGO_BARRAS, new FieldStringFixedLengthArchetype(100));
+        
+        FieldStringFixedLengthArchetype f100 = new FieldStringFixedLengthArchetype(100);
+        f.setAcceptNullable(true);
+        addFieldArchetype(CODIGO_BARRAS, f100);
         addFieldArchetype(COMBUSTIVEL_SOLVENTE, fef);
         addFieldArchetype(CODIGO_SEFAZ, new FieldStringFixedLengthArchetype(4));
         addFieldArchetype(CODIGO_ANP, new FieldStringFixedLengthArchetype(9));
-        addFieldArchetype(CODIGO_UNIDADE_COMERCIAL, new FieldStringFixedLengthArchetype(6));
-        addFieldArchetype(CODIGO_UNIDADE_ESTOQUE, new FieldStringFixedLengthArchetype(6));
-        addFieldArchetype(FATOR_CONVERSAO, new FieldDecimalFixedLengthArchetype(14, 6));
+        addFieldArchetype(CODIGO_UNIDADE_COMERCIAL, new FieldIntegerFixedLengthArchetype(6));
+        addFieldArchetype(CODIGO_UNIDADE_ESTOQUE, new FieldIntegerFixedLengthArchetype(6));
+        FieldDecimalFixedLengthArchetype fd = new FieldDecimalFixedLengthArchetype(14, 6);
+        fd.setAcceptNullable(true);
+        addFieldArchetype(FATOR_CONVERSAO, fd);
+        
         addFieldArchetype(CODIGO_PRODUTO_DNF, new FieldIntegerFixedLengthArchetype(3));
         addFieldArchetype(FATOR_CONVERSAO_UNIDADE_MEDIDA_ESTOQUE_DNF, new FieldDecimalFixedLengthArchetype(14, 3));
         addFieldArchetype(CAPACIDADE_VOLUMETRICA_DNF, new FieldIntegerFixedLengthArchetype(5));
