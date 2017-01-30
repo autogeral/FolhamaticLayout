@@ -460,6 +460,7 @@ public class E020ProdutosServicos extends LineArchetype {
         addFieldArchetype(PERIODO_FINAL_UTILIZACAO_PRODUTO_SERVICO, faa);
         FieldStringFixedLengthArchetype f = new FieldStringFixedLengthArchetype(14);
         f.setAcceptNullable(true);
+        f.setFullFiling(' ');
         addFieldArchetype(CODIGO_ANTERIOR, f);
         
         addFieldArchetype(GENERO, new FieldStringFixedLengthArchetype(2));
@@ -469,6 +470,7 @@ public class E020ProdutosServicos extends LineArchetype {
         
         FieldStringFixedLengthArchetype f100 = new FieldStringFixedLengthArchetype(100);
         f.setAcceptNullable(true);
+        f.setFullFillingNullable(true);
         addFieldArchetype(CODIGO_BARRAS, f100);
         addFieldArchetype(COMBUSTIVEL_SOLVENTE, fef);
         addFieldArchetype(CODIGO_SEFAZ, new FieldStringFixedLengthArchetype(4));

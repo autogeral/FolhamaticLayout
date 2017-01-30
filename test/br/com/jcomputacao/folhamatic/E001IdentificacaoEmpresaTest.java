@@ -25,6 +25,7 @@ public class E001IdentificacaoEmpresaTest {
 
     @Test
     public void testSomeMethod() {
+        System.setProperty("fileGenerator.debug", "true");
         E001IdentificacaoEmpresa e = new E001IdentificacaoEmpresa();
         LineModel lm = e.createModel();
         lm.setFieldValue(E001IdentificacaoEmpresa.NUMERO_EMPRESA, 1l);
@@ -32,6 +33,7 @@ public class E001IdentificacaoEmpresaTest {
         
         String line = lm.getRepresentation().toString();
         System.out.println("\"" + line + "\"");
+        assertTrue(line.length() == 15);
         
     }
 

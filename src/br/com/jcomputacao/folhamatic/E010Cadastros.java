@@ -132,12 +132,13 @@ public class E010Cadastros extends LineArchetype {
      * Preecher somente se o campo HOSPEDAGEM_SITES for S.
      */
     public static final String LOJA_VIRTUAL_FINAL_CONTRATO = "LOJA_VIRTUAL_FINAL_CONTRATO";
+    public static final String CONTROLE_SISTEMA = "CONTROLE_SISTEMA";
     
     public E010Cadastros() {
         setName("Folhamatic - Cadastros");
         
         //01
-        addFieldArchetype(NOME_REGISTRO, new FieldDefaultArchetype("E001"));
+        addFieldArchetype(NOME_REGISTRO, new FieldDefaultArchetype("E010"));
         addFieldArchetype(CODIGO, new FieldStringFixedLengthArchetype(20));
         addFieldArchetype(NOME, new FieldStringFixedLengthArchetype(100));
         FieldDateFixedLengthArchetype faa = new FieldDateFixedLengthArchetype("yyyyMMdd");
@@ -214,6 +215,7 @@ public class E010Cadastros extends LineArchetype {
         addFieldArchetype(LOJA_VIRTUAL_ENDERECO_WEB, f);
         addFieldArchetype(LOJA_VIRTUAL_INICIO_CONTRATO, faa);
         addFieldArchetype(LOJA_VIRTUAL_FINAL_CONTRATO, faa);
+        addFieldArchetype(CONTROLE_SISTEMA, new FieldDefaultArchetype("0"));
     }
 
 }
