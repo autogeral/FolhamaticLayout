@@ -469,22 +469,42 @@ public class E020ProdutosServicos extends LineArchetype {
         addFieldArchetype(NBM, new FieldStringFixedLengthArchetype(15));
         
         FieldStringFixedLengthArchetype f100 = new FieldStringFixedLengthArchetype(100);
-        f.setAcceptNullable(true);
-        f.setFullFillingNullable(true);
+        f100.setAcceptNullable(true);
+        f100.setFullFiling(' ');
         addFieldArchetype(CODIGO_BARRAS, f100);
         addFieldArchetype(COMBUSTIVEL_SOLVENTE, fef);
-        addFieldArchetype(CODIGO_SEFAZ, new FieldStringFixedLengthArchetype(4));
-        addFieldArchetype(CODIGO_ANP, new FieldStringFixedLengthArchetype(9));
+        
+        FieldStringFixedLengthArchetype f4 = new FieldStringFixedLengthArchetype(4);
+        f4.setAcceptNullable(true);
+        f4.setFullFiling(' ');
+        addFieldArchetype(CODIGO_SEFAZ, f4);
+        
+        FieldStringFixedLengthArchetype f9 = new FieldStringFixedLengthArchetype(4);
+        f9.setAcceptNullable(true);
+        f9.setFullFiling(' ');
+        addFieldArchetype(CODIGO_ANP, f9);
         addFieldArchetype(CODIGO_UNIDADE_COMERCIAL, new FieldIntegerFixedLengthArchetype(6));
         addFieldArchetype(CODIGO_UNIDADE_ESTOQUE, new FieldIntegerFixedLengthArchetype(6));
         FieldDecimalFixedLengthArchetype fd = new FieldDecimalFixedLengthArchetype(14, 6);
         fd.setAcceptNullable(true);
         addFieldArchetype(FATOR_CONVERSAO, fd);
         
-        addFieldArchetype(CODIGO_PRODUTO_DNF, new FieldIntegerFixedLengthArchetype(3));
-        addFieldArchetype(FATOR_CONVERSAO_UNIDADE_MEDIDA_ESTOQUE_DNF, new FieldDecimalFixedLengthArchetype(14, 3));
-        addFieldArchetype(CAPACIDADE_VOLUMETRICA_DNF, new FieldIntegerFixedLengthArchetype(5));
-        addFieldArchetype(IPI_ALIQUOTA, new FieldDecimalFixedLengthArchetype(5, 2));
+        FieldIntegerFixedLengthArchetype fi = new FieldIntegerFixedLengthArchetype(3);
+        fi.setAcceptNullable(true);
+        addFieldArchetype(CODIGO_PRODUTO_DNF, fi);
+        
+        FieldDecimalFixedLengthArchetype fca = new FieldDecimalFixedLengthArchetype(14, 3);
+        fca.setAcceptNullable(true);
+        addFieldArchetype(FATOR_CONVERSAO_UNIDADE_MEDIDA_ESTOQUE_DNF, fca);
+        
+        FieldIntegerFixedLengthArchetype fi5 = new FieldIntegerFixedLengthArchetype(5);
+        fi5.setAcceptNullable(true);
+        addFieldArchetype(CAPACIDADE_VOLUMETRICA_DNF, fi5);
+        
+        FieldDecimalFixedLengthArchetype fd52 = new FieldDecimalFixedLengthArchetype(5, 2);
+        fd.setAcceptNullable(true);
+        addFieldArchetype(IPI_ALIQUOTA, fd52);
+        
         addFieldArchetype(IPI_SUBSTITUICAO_TRIBUTARIA, new FieldStringFixedLengthArchetype(2));
         addFieldArchetype(SERVICOS_LC116_03, new FieldStringFixedLengthArchetype(5));
         addFieldArchetype(CONTA_ANALITICA_CONTABIL, new FieldStringFixedLengthArchetype(50));

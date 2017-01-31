@@ -150,13 +150,15 @@ public class E010Cadastros extends LineArchetype {
         addFieldArchetype(LOGRADOURO, new FieldStringFixedLengthArchetype(100));
         addFieldArchetype(NUMERO_LOGRADOURO, new FieldStringFixedLengthArchetype(10));
         
-        addFieldArchetype(COMPLEMENTO_LOGRADOURO, new FieldStringFixedLengthArchetype(50));
+        FieldStringFixedLengthArchetype f = new FieldStringFixedLengthArchetype(50);
+        f.setAcceptNullable(true);
+        addFieldArchetype(COMPLEMENTO_LOGRADOURO, f);
         addFieldArchetype(BAIRRO, new FieldStringFixedLengthArchetype(30));
         addFieldArchetype(ESTADO, new FieldStringFixedLengthArchetype(2));
         addFieldArchetype(CIDADE_IBGE, new FieldIntegerFixedLengthArchetype(7));
         addFieldArchetype(CEP, new FieldIntegerFixedLengthArchetype(8));
         addFieldArchetype(PAIS, new FieldIntegerFixedLengthArchetype(5));
-        FieldStringFixedLengthArchetype f = new FieldStringFixedLengthArchetype(14);
+        f = new FieldStringFixedLengthArchetype(14);
         f.setAcceptNullable(true);
         addFieldArchetype(CPF_CNPJ, f);
         
