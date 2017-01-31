@@ -278,13 +278,13 @@ public class E020ProdutosServicos extends LineArchetype {
     public static final String IPI_ALIQUOTA = "IPI_ALIQUOTA";
     /**
      * 24 - Tipo N Tamanho 5,2</br>
-     * IPI_SUBSTITUICAO_TRIBUTARIA</br>
+     * IPI_SITUACAO_TRIBUTARIA</br>
      * Informe o código da Situação Tributária referente ao IPI</br>
      * conforme Tabela da Situação Tributária do IPI.</br>
      * Quando o Tipo do Produto (campo 10) for 09-Serviços</br>
      * preencha este campo com espaços.</br>
      */
-    public static final String IPI_SUBSTITUICAO_TRIBUTARIA = "IPI_SUBSTITUICAO_TRIBUTARIA";
+    public static final String IPI_SITUACAO_TRIBUTARIA = "IPI_SITUACAO_TRIBUTARIA";
     /**
      * 25 - Tipo X Tamanho 5</br>
      * Quando o tipo do produto (campo 10) for 09-Serviços</br>
@@ -438,6 +438,7 @@ public class E020ProdutosServicos extends LineArchetype {
         setName("Folhamatic - Produto ou Serviço");
         
         FieldDecimalFixedLengthArchetype faip = new FieldDecimalFixedLengthArchetype(7, 4);
+        faip.setAcceptNullable(true);
         
         FieldEnumFixedLengthArchetype fef = new FieldEnumFixedLengthArchetype(1, FieldEnumFixedLengthArchetype.EnumType.STRING);
         fef.setAcceptNullable(true);
@@ -451,20 +452,23 @@ public class E020ProdutosServicos extends LineArchetype {
 
         //01
         addFieldArchetype(NOME_REGISTRO, new FieldDefaultArchetype("E020"));
-        addFieldArchetype(CODIGO_PRODUTO_SERVICO, new FieldStringFixedLengthArchetype(6));
-        addFieldArchetype(DESCRICAO, new FieldStringFixedLengthArchetype(50));
+        addFieldArchetype(CODIGO_PRODUTO_SERVICO, new FieldStringFixedLengthArchetype(14));
+        addFieldArchetype(DESCRICAO, new FieldStringFixedLengthArchetype(60));
 
         addFieldArchetype(DATA_INCLUSAO, faa);
         addFieldArchetype(DATA_ALTERACAO_DESCRICAO, faa);
         addFieldArchetype(PERIODO_INICIAL_UTILIZACAO_PRODUTO_SERVICO, faa);
         addFieldArchetype(PERIODO_FINAL_UTILIZACAO_PRODUTO_SERVICO, faa);
+        
         FieldStringFixedLengthArchetype f = new FieldStringFixedLengthArchetype(14);
         f.setAcceptNullable(true);
-        f.setFullFiling(' ');
         addFieldArchetype(CODIGO_ANTERIOR, f);
         
-        addFieldArchetype(GENERO, new FieldStringFixedLengthArchetype(2));
-        addFieldArchetype(TIPO, new FieldStringFixedLengthArchetype(2));
+        FieldStringFixedLengthArchetype f2 = new FieldStringFixedLengthArchetype(2);
+        f2.setAcceptNullable(true);
+        
+        addFieldArchetype(GENERO,f2);
+        addFieldArchetype(TIPO, f2);
         addFieldArchetype(TIPO_INVENTARIO, new FieldIntegerFixedLengthArchetype(4));
         addFieldArchetype(NBM, new FieldStringFixedLengthArchetype(15));
         
@@ -479,7 +483,7 @@ public class E020ProdutosServicos extends LineArchetype {
         f4.setFullFiling(' ');
         addFieldArchetype(CODIGO_SEFAZ, f4);
         
-        FieldStringFixedLengthArchetype f9 = new FieldStringFixedLengthArchetype(4);
+        FieldStringFixedLengthArchetype f9 = new FieldStringFixedLengthArchetype(9);
         f9.setAcceptNullable(true);
         f9.setFullFiling(' ');
         addFieldArchetype(CODIGO_ANP, f9);
@@ -505,23 +509,46 @@ public class E020ProdutosServicos extends LineArchetype {
         fd.setAcceptNullable(true);
         addFieldArchetype(IPI_ALIQUOTA, fd52);
         
-        addFieldArchetype(IPI_SUBSTITUICAO_TRIBUTARIA, new FieldStringFixedLengthArchetype(2));
-        addFieldArchetype(SERVICOS_LC116_03, new FieldStringFixedLengthArchetype(5));
-        addFieldArchetype(CONTA_ANALITICA_CONTABIL, new FieldStringFixedLengthArchetype(50));
+        addFieldArchetype(IPI_SITUACAO_TRIBUTARIA, new FieldStringFixedLengthArchetype(2));
+        
+        FieldStringFixedLengthArchetype f5 = new FieldStringFixedLengthArchetype(5);
+        f5.setAcceptNullable(true);
+        addFieldArchetype(SERVICOS_LC116_03, f5);
+        
+        FieldStringFixedLengthArchetype f50 = new FieldStringFixedLengthArchetype(50);
+        f50.setAcceptNullable(true);
+        addFieldArchetype(CONTA_ANALITICA_CONTABIL, f50);
+        
         addFieldArchetype(ICMS_ALIQUOTA, faip);
         addFieldArchetype(ICMS_ALIQUOTA_ADICIONAL, faip);
         addFieldArchetype(ICMS_ALIQUOTA_ADICIONAL_RJ, fef);
         addFieldArchetype(ICMS_BASE_CALCULO_REDUCAO, faip);
-        addFieldArchetype(ICMS_BASE_VALOR_UNITARIO, new FieldDecimalFixedLengthArchetype(14,2));
-        addFieldArchetype(ICMS_SITUACAO_TRIBUTARIA_TABELA_A, new FieldStringFixedLengthArchetype(1));
-        addFieldArchetype(ICMS_SITUACAO_TRIBUTARIA_TABELA_B, new FieldStringFixedLengthArchetype(2));
-        addFieldArchetype(PIS_SITUACAO_TRIBUTARIA, new FieldStringFixedLengthArchetype(2));
-        addFieldArchetype(COFINS_SITUACAO_TRIBUTARIA, new FieldStringFixedLengthArchetype(2));
-        addFieldArchetype(PIS_COFINS_TIPO_INCIDENCIA, new FieldStringFixedLengthArchetype(1));
-        addFieldArchetype(PIS_COFINS_TABELA_BEBIDAS_FRIAS, new FieldStringFixedLengthArchetype(3));
-        addFieldArchetype(GRUPO_REGIME_ESPECIAL, new FieldStringFixedLengthArchetype(2));
-        addFieldArchetype(MARCA, new FieldStringFixedLengthArchetype(60));
-        addFieldArchetype(CODIGO_SEFAZ_MG, new FieldStringFixedLengthArchetype(5));
+        
+        FieldDecimalFixedLengthArchetype fd14_2 = new FieldDecimalFixedLengthArchetype(14,2);
+        fd14_2.setAcceptNullable(true);
+        addFieldArchetype(ICMS_BASE_VALOR_UNITARIO, fd14_2);
+        
+        FieldStringFixedLengthArchetype f1 = new FieldStringFixedLengthArchetype(1);
+        f1.setAcceptNullable(true);
+        addFieldArchetype(ICMS_SITUACAO_TRIBUTARIA_TABELA_A, f1);
+        
+        addFieldArchetype(ICMS_SITUACAO_TRIBUTARIA_TABELA_B, f2);
+        addFieldArchetype(PIS_SITUACAO_TRIBUTARIA, f2);
+        addFieldArchetype(COFINS_SITUACAO_TRIBUTARIA, f2);
+        addFieldArchetype(PIS_COFINS_TIPO_INCIDENCIA, f1);
+        
+        FieldStringFixedLengthArchetype f3 = new FieldStringFixedLengthArchetype(3);
+        f3.setAcceptNullable(true);
+        addFieldArchetype(PIS_COFINS_TABELA_BEBIDAS_FRIAS, f3);
+        
+        addFieldArchetype(GRUPO_REGIME_ESPECIAL, f2);
+        
+        f = new FieldStringFixedLengthArchetype(60);
+        f.setAcceptNullable(true);
+        addFieldArchetype(MARCA, f);
+        
+        addFieldArchetype(CODIGO_SEFAZ_MG, f5);
+        
         addFieldArchetype(CONTROLE_SISTEMA, new FieldDefaultArchetype("0"));
     }
 
