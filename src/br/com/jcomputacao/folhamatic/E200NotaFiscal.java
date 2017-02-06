@@ -186,6 +186,115 @@ Convênio 115/03)<tr><td>
      */
     public static final String JUSTIFICATIVA_CANCELAMENTO = "JUSTIFICATIVA_CANCELAMENTO";
     
+    /**
+     * <br>(REDF) - Se a empresa utiliza a geração do arquivo REDFNota</br>
+     * <br>Fiscal Paulista, informe a hora, minuto e segundo</br>
+     * <br>da emissão da nota fiscal.</br>
+     * <br>(formatoHHMMSS)</br>
+     */
+    private static final String HORA_EMISSAO_NOTA_FISCAL = "HORA_EMISSAO_NOTA_FISCAL";
+    
+    /**
+     * <br>(REDF) - Se a empresa utiliza a geração do arquivo</br>
+     * <br>REDF-Nota Fiscal Paulista, informe a hora, minuto e segundo</br>
+     * <br>da entrada ou saída damercadoria/produto/serviço da nota.</br>
+     * <br>(formato HHMMSS).</br>
+     */
+    private static final String HORA_ENTRADA_SAIDA_NOTA_FISCAL = "HORA_ENTRADA_SAIDA_NOTA_FISCAL";
+    
+    /**
+     * <br>TIPO DO FRETE</br>
+     * <br>"Preencher com:</br>
+     * <br>"1" caso o frete tenha sido pago pelo Emitente (CIF)</br>
+     * <br>"2" caso tenha sido pago pelo Destinatário (FOB)</br>
+     * <br>"3" se o frete foi pago por terceiros.</br>
+     * <br>Preencher com zero quando for lançamento de CMR, ECF, PDV ou CF-e</br>
+     * <br>ou caso não haja na nota fiscal informação do pagamento do frete</br>
+     * <br>(Ex. remessas simbólicas, faturamento simbólico, transporte próprio,</br>
+     * <br>venda balcão), diferente disso, para fins de geração</br>
+     * <br>do arquivo de combustíveis (GRF-CBT), SINTEGRA</br>
+     * <br>SINCO e EFD, esta informação será necessária.</br>
+     * <br>Para fins da EFD é orientado que quando houver transporte</br>
+     * <br>com mais de um responsável pelo seu pagamento</br>
+     * <br>deve ser informado o indicador do frete relativo ao</br>
+     * <br>responsável pelo primeiro percurso.</br>
+     */
+    private static final String FRETE_TIPO = "FRETE_TIPO";
+    
+    /**
+     * VALOR CONTÁBIL - Informe o valor total da nota fiscal. 19 (Valor Contábil).
+     */
+    private static final String VALOR_CONTABIL = "VALOR_CONTABIL";
+    
+    /**
+     * CÓD. INT. CONTÁBIL IMPOSTOS RETIDOS- Informe o número do código de
+     * integração se a empresa exporta os impostos retidos das notas fiscais de
+     * saídas para a contabilidade do Sistema Telecont, caso contrário, deixe
+     * este campo vazio. Este código equivale aos impostos PIS, COFINS e CSLL
+     * retidos do registro E209 e ao IRRF do registro E210.
+     */
+    private static final String CODIGO_INTEGRACAO_CONTABIL_IMPOSTOS_RETIDOS = "CODIGO_INTEGRACAO_CONTABIL_IMPOSTOS_RETIDOS";
+    
+    /**
+     * CÓDIGO DA CONTA - Se a empresa utiliza a geração do arquivo
+     * EFD-Escrituração Fiscal Digital e o modelo da nota é 02, 07, 08, 8B, 09,
+     * 10, 11, 18, 21, 22, 26, 27 ou 57, informe o código da conta analítica.
+     * Exemplos: estoques, receitas, despesas, ativos. Deve ser a conta credora
+     * ou devedora principal, podendo ser informada a conta sintética (nível
+     * acima da conta analítica). Diferente da situação acima, deixe este campo
+     * vazio.
+     */
+    private static final String CODIGO_CONTA = "CODIGO_CONTA";
+    
+    /**
+     * NF CONJUGADA - Para fins do ISS Digital de Campinas, informe "S" quando a
+     * NF for Conjugada ou "N" caso não seja. Se a empresa não utiliza o arquivo
+     * Municipal "ISS Digital", preencha esse campo com espaços.
+     */
+    private static final String NOTA_FISCAL_CONJUDADA = "NOTA_FISCAL_CONJUDADA";
+    
+    /**
+     * Nº LINHAS DE LANÇAMENTO - Informe o número total de linhas de lançamento
+     * de ICMS/IPI que a nota fiscal contém. Este total de linhas se refere a
+     * quantidade de registros E201 que a nota tem, por exemplo uma N.F. que tem
+     * duas alíquotas de ICMS 18% e 25% terá duas linhas com registro E201,
+     * então neste campo deverá constar 02. Este número total pode ser
+     * identificado através do campo 27 do último registro E201 da nota.
+     */
+    private static final String NUMERO_LINHAS_LANCMENTO = "NUMERO_LINHAS_LANCMENTO";
+    
+    /**
+     * <br>DATA DE LANÇAMENTO NO SISTEMA</br>
+     * <br>A importação utilizará este campo como</br>
+     * <br>referência para exibição das notas de acordo com o mês/ano ativo no sistema.</br>
+     * <br>Ex: se foi informado neste campo 01/02/2009, então ao importar o sistema apresentará a
+     * <br>nota no mês 02/2009.
+     * <br>Se for notas de entradas repita a data de entrada da nota (campo 10).
+     * <br>Se for notas de saídas repita a data de emissão (campo 09) ou data de saída (campo 10)
+     * <br>conforme a configuração feita no sistema (Painel de Controle, Configurações do Sistema,
+     * <br>Configuração de Datas-Saídas, NF-Saídas-Cálculo de todos os Impostos).
+     * <br>Quando for um lançamento extemporâneo, informe a data que o lançamento deverá ser
+     * <br>feito no sistema. Ex. nota com data de emissão 31/01/2009 (campo 09) e data de
+     * <br>entrada/saída 01/02/2009 (campo 10) que terá um lançamento extemporâneo em 04/2009,
+     * <br>então neste exemplo a data neste campo é 01/04/2009.
+     * <br>Para lançamentos extemporâneos o dia desta data será utilizado na apuração do IPI
+     * <br>Decendial, Quinzenal, Quinzenal/Decendial e Mensal/Decendial. Também será utilizado
+     * <br>nos livros e relatórios com emissão por período. (Ex. de 01 a 15)
+     * <br>Informe a data no formato AAAAMMDD.
+     * <br>Para lançamento extemporâneo, o preenchimento deste campo é obrigatório.
+     * <br>Para lançamento normal, se não desejar informar esta data, informe os dados até a
+     * <br>posição 414, e desta forma se for notas de entradas e este campo estiver vazio, o sistema
+     * <br>importará a nota no mês/ano da data de entrada da nota (campo 10) e se for notas de
+     * <br>saídas, verificará o mês/ano da data de emissão (campo 09) e importará a nota conforme a
+     * <br>configuração feita no sistema para este mês/ano (Painel de Controle, Configurações do
+     * <br>Sistema, Configuração de Datas-Saídas, NF-Saídas-Cálculo de todos os Impostos).
+     * <br>Exemplo no arquivo está data de emissão 31/01/2009 (campo 09) e data de saída
+     * <br>01/02/2009 (campo 10) e este campo está vazio. Será verificado a configuração do
+     * <br>mês/ano da data de emissão (01/2009), se estiver Pela Data de Saída, esta nota será
+     * <br>importada para o mês 02/2009 e se estiver Pela Data de Emissão, será importada para o
+     * <br>mês 01/2009.
+     */
+    private static final String DATA_LANCAMENTO_SISTEMA = "DATA_LANCAMENTO_SISTEMA";
 
     public E200NotaFiscal() {
         setName("Folhamatic - Nota Fiscal");
