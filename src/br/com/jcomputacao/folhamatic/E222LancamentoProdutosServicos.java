@@ -442,12 +442,6 @@ public class E222LancamentoProdutosServicos extends LineArchetype{
         fef.setFullFillingNullable(true);
         fef.setFullFiling('N');
         
-        // D
-        FieldDateFixedLengthArchetype faa = new FieldDateFixedLengthArchetype("yyyyMMdd");
-        faa.setAcceptNullable(true);
-        faa.setFullFillingNullable(true);
-        faa.setFullFiling(' ');
-        
         addFieldArchetype(NOME_REGISTRO, new FieldDefaultArchetype("E222"));
         addFieldArchetype(ENTRADA_SAIDA, fef);
         addFieldArchetype(ESPECIE_NF, new FieldStringFixedLengthArchetype(5));
@@ -507,7 +501,11 @@ public class E222LancamentoProdutosServicos extends LineArchetype{
         addFieldArchetype(BASE_ICMS_REDUZIDA, faip142);
         addFieldArchetype(DADOS_REDF, new FieldIntegerFixedLengthArchetype(1));
         addFieldArchetype(NUMERO_TOTALIZADOR, new FieldStringFixedLengthArchetype(2));
-        addFieldArchetype(DESCONTO_INCONDICIONAL, fef);
+        
+        FieldEnumFixedLengthArchetype fefDI = new FieldEnumFixedLengthArchetype(1, FieldEnumFixedLengthArchetype.EnumType.STRING);
+        fefDI.setAcceptNullable(false);
+        
+        addFieldArchetype(DESCONTO_INCONDICIONAL, fefDI);
         addFieldArchetype(CSONS, new FieldStringFixedLengthArchetype(3));
         FieldIntegerFixedLengthArchetype cs = new FieldIntegerFixedLengthArchetype(10);
         cs.setFullFiling('0');
