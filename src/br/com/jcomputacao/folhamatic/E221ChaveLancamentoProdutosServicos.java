@@ -346,6 +346,9 @@ public class E221ChaveLancamentoProdutosServicos extends LineArchetype{
         FieldDecimalFixedLengthArchetype faip60 = new FieldDecimalFixedLengthArchetype(60, 0);
         faip60.setAcceptNullable(true);
         
+        FieldDecimalFixedLengthArchetype faip133 = new FieldDecimalFixedLengthArchetype(13, 3);
+        faip133.setAcceptNullable(true);
+        
         FieldDecimalFixedLengthArchetype faip142 = new FieldDecimalFixedLengthArchetype(14, 2);
         faip142.setAcceptNullable(true);
         
@@ -379,7 +382,7 @@ public class E221ChaveLancamentoProdutosServicos extends LineArchetype{
         addFieldArchetype(SUBSERIE_NF, new FieldStringFixedLengthArchetype(2));
         addFieldArchetype(NUMERO_NF, new FieldIntegerFixedLengthArchetype(10));
         addFieldArchetype(CODIGO_CLIENTE_FORNECEDOR, new FieldStringFixedLengthArchetype(20));
-/*
+
         addFieldArchetype(FRETE, faip142);
         addFieldArchetype(SEGURO, faip142);
         addFieldArchetype(DESPESAS_ACESSORIAS, faip142);
@@ -391,25 +394,25 @@ public class E221ChaveLancamentoProdutosServicos extends LineArchetype{
         addFieldArchetype(CODIGO_TRANSPORTADOR, new FieldStringFixedLengthArchetype(20));
         addFieldArchetype(IDENTIFICACAO_VEICULO_PLACA_1, new FieldStringFixedLengthArchetype(15));
         addFieldArchetype(IE_SUBSTITUTO_TRIBUTARIO, new FieldStringFixedLengthArchetype(18));
-        addFieldArchetype(QUANTIDADE_VOLUMES, );
+        addFieldArchetype(QUANTIDADE_VOLUMES,  new FieldIntegerFixedLengthArchetype(15));
         addFieldArchetype(ESPECIE_VOLUMES, new FieldStringFixedLengthArchetype(10));
-        addFieldArchetype(IE_TRANSPORTADOR, );
-        addFieldArchetype(ESTADO_TRANSPORTADOR, );
-        addFieldArchetype(ESTADO_PLACA_VEICULO_1, );
-        addFieldArchetype(IDENTIFICACAO_VEICULO_PLACA_2, );
-        addFieldArchetype(ESTADO_PLACA_VEICULO_2, );
-        addFieldArchetype(IDENTIFICACAO_VEICULO_PLACA_3, );
-        addFieldArchetype(ESTADO_PLACA_VEICULO_3, );
-        addFieldArchetype(LOCAL_SAIDA_MERCADORIA, );
-        addFieldArchetype(CNPJ_CPF_SAIDA_MERCADORIA, );
-        addFieldArchetype(ESTADO_SAIDA_MERCADORIA, );
-        addFieldArchetype(IE_SAIDA_MERCADORIA, );
-        addFieldArchetype(LOCAL_RECEBIMENTO_MERCADORIA, );
-        addFieldArchetype(CNPJ_CPF_RECEBIMENTO_MERCADORIA, );
-        addFieldArchetype(ESTADO_RECEBIMENTO_MERCADORIA, );
-        addFieldArchetype(IE_RECEBIMENTO_MERCADORIA, );
-        addFieldArchetype(UF_TRANSPORTADOR, );
-        addFieldArchetype(CONTROLE_SISTEMA, );*/
+        addFieldArchetype(IE_TRANSPORTADOR, new FieldStringFixedLengthArchetype(18));
+        addFieldArchetype(ESTADO_TRANSPORTADOR, new FieldStringFixedLengthArchetype(2));
+        addFieldArchetype(ESTADO_PLACA_VEICULO_1, new FieldStringFixedLengthArchetype(2));
+        addFieldArchetype(IDENTIFICACAO_VEICULO_PLACA_2, new FieldStringFixedLengthArchetype(15));
+        addFieldArchetype(ESTADO_PLACA_VEICULO_2, new FieldStringFixedLengthArchetype(2));
+        addFieldArchetype(IDENTIFICACAO_VEICULO_PLACA_3, new FieldStringFixedLengthArchetype(15));
+        addFieldArchetype(ESTADO_PLACA_VEICULO_3, new FieldStringFixedLengthArchetype(2));
+        addFieldArchetype(LOCAL_SAIDA_MERCADORIA, new FieldIntegerFixedLengthArchetype(1));
+        addFieldArchetype(CNPJ_CPF_SAIDA_MERCADORIA, new FieldStringFixedLengthArchetype(14));
+        addFieldArchetype(ESTADO_SAIDA_MERCADORIA, new FieldStringFixedLengthArchetype(2));
+        addFieldArchetype(IE_SAIDA_MERCADORIA, new FieldStringFixedLengthArchetype(18));
+        addFieldArchetype(LOCAL_RECEBIMENTO_MERCADORIA, new FieldIntegerFixedLengthArchetype(1));
+        addFieldArchetype(CNPJ_CPF_RECEBIMENTO_MERCADORIA, new FieldStringFixedLengthArchetype(14));
+        addFieldArchetype(ESTADO_RECEBIMENTO_MERCADORIA, new FieldStringFixedLengthArchetype(2));
+        addFieldArchetype(IE_RECEBIMENTO_MERCADORIA, new FieldStringFixedLengthArchetype(18));
+        addFieldArchetype(UF_TRANSPORTADOR, new FieldStringFixedLengthArchetype(2));
+        addFieldArchetype(CONTROLE_SISTEMA, new FieldIntegerFixedLengthArchetype(1));
     }
     
     
