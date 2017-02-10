@@ -28,19 +28,19 @@ public class E222LancamentoProdutosServicos extends LineArchetype{
      /**
      * ESPÉCIE N.F.- Informe a espécie da nota fiscal.
      */
-    public static final String ESPECIE_NF = "ESPECIE_NF";
+    public static final String ESPECIE_NOTA_FISCAL = "ESPECIE_NOTA_FISCAL";
     /**
      * SÉRIE N.F. - Informe a série da nota fiscal.
      */
-    public static final String SERIE_NF = "SERIE_NF";
+    public static final String SERIE_NOTA_FISCAL = "SERIE_NOTA_FISCAL";
      /**
      * SUBSÉRIE N.F.- Informe a subsérie da nota fiscal.
      */
-    public static final String SUBSERIE_NF = "SUBSERIE_NF";
+    public static final String SUBSERIE_NOTA_FISCAL = "SUBSERIE_NOTA_FISCAL";
      /**
      * NÚMERO N.F. - Informe o número da nota fiscal.</br>
      */
-    public static final String NUMERO_NF = "NUMERO_NF";
+    public static final String NUMERO_NOTA_FISCAL = "NUMERO_NOTA_FISCAL";
     /**
      * CÓDIGO DO CLIENTE/FORNECEDOR - Informe o código do cliente ou fornecedor da nota
      * fiscal conforme cadastro do sistema de faturamento.</br>
@@ -291,7 +291,7 @@ public class E222LancamentoProdutosServicos extends LineArchetype{
      * FRETE NO TOTAL DA NF - Informe "S" se o valor do frete está incluso no valor total da</br>
      * nota fiscal ou "N" se não está.</br>
      */
-    public static final String FRETE_TOTAL_NF = "FRETE_TOTAL_NF";
+    public static final String FRETE_TOTAL_NOTA_FISCAL = "FRETE_TOTAL_NOTA_FISCAL";
      /**
      * SEGURO - Informe o valor do seguro do produto.</br>
      */
@@ -300,7 +300,7 @@ public class E222LancamentoProdutosServicos extends LineArchetype{
      * SEGURO NO TOTAL DA NF - Informe "S" se o valor do seguro está incluso no valor total</br>
      * da nota fiscal ou "N" se não está.</br>
      */
-    public static final String SEGURO_TOTAL_NF = "SEGURO_TOTAL_NF";
+    public static final String SEGURO_TOTAL_NOTA_FISCAL = "SEGURO_TOTAL_NOTA_FISCAL";
      /**
      * DESPESAS ACESSÓRIAS - Informe o valor de outras despesas acessórias do produto.</br>
      */
@@ -309,7 +309,7 @@ public class E222LancamentoProdutosServicos extends LineArchetype{
      * DESPESAS ACESSÓRIAS NO TOTAL DA NF - Informe "S" se o valor das despesas</br>
      * acessórias está incluso no valor total da nota fiscal ou "N" se não está.</br>
      */
-    public static final String DESPESA_ACESSORIA_TOTAL_NF = "DESPESA_ACESSORIA_TOTAL_NF";
+    public static final String DESPESA_ACESSORIA_TOTAL_NOTA_FISCAL = "DESPESA_ACESSORIA_TOTAL_NOTA_FISCAL";
      /**
      * ACRÉSCIMO - Quando o lançamento for de cupom fiscal com modelos 02 e 2D, informe o</br>
      * valor de acréscimo do produto/serviço, caso contrário, informe zeros.</br>
@@ -413,14 +413,11 @@ public class E222LancamentoProdutosServicos extends LineArchetype{
         FieldDecimalFixedLengthArchetype faip076 = new FieldDecimalFixedLengthArchetype(7, 6);
         faip076.setAcceptNullable(true);
         
-         FieldDecimalFixedLengthArchetype faip074 = new FieldDecimalFixedLengthArchetype(7, 4);
+        FieldDecimalFixedLengthArchetype faip074 = new FieldDecimalFixedLengthArchetype(7, 4);
         faip074.setAcceptNullable(true);
         
         FieldDecimalFixedLengthArchetype faip14 = new FieldDecimalFixedLengthArchetype(14, 0);
         faip14.setAcceptNullable(true);
-        
-        FieldDecimalFixedLengthArchetype faip60 = new FieldDecimalFixedLengthArchetype(60, 0);
-        faip60.setAcceptNullable(true);
         
         FieldDecimalFixedLengthArchetype faip142 = new FieldDecimalFixedLengthArchetype(14, 2);
         faip142.setAcceptNullable(true);
@@ -444,10 +441,10 @@ public class E222LancamentoProdutosServicos extends LineArchetype{
         
         addFieldArchetype(NOME_REGISTRO, new FieldDefaultArchetype("E222"));
         addFieldArchetype(ENTRADA_SAIDA, fef);
-        addFieldArchetype(ESPECIE_NF, new FieldStringFixedLengthArchetype(5));
-        addFieldArchetype(SERIE_NF, new FieldStringFixedLengthArchetype(3));
-        addFieldArchetype(SUBSERIE_NF, new FieldStringFixedLengthArchetype(2));
-        addFieldArchetype(NUMERO_NF, new FieldIntegerFixedLengthArchetype(10));
+        addFieldArchetype(ESPECIE_NOTA_FISCAL, new FieldStringFixedLengthArchetype(5));
+        addFieldArchetype(SERIE_NOTA_FISCAL, new FieldStringFixedLengthArchetype(3));
+        addFieldArchetype(SUBSERIE_NOTA_FISCAL, new FieldStringFixedLengthArchetype(2));
+        addFieldArchetype(NUMERO_NOTA_FISCAL, new FieldIntegerFixedLengthArchetype(10));
         addFieldArchetype(CODIGO_CLIENTE_FORNECEDOR, new FieldStringFixedLengthArchetype(20));
         addFieldArchetype(N_ITEM, new FieldIntegerFixedLengthArchetype(3));
         addFieldArchetype(CFOP,  new FieldStringFixedLengthArchetype(4));
@@ -488,11 +485,11 @@ public class E222LancamentoProdutosServicos extends LineArchetype{
         addFieldArchetype(APURACAO_DISTINTA_IPI,  new FieldStringFixedLengthArchetype(1));
         addFieldArchetype(CODIGO_CONTA, new FieldStringFixedLengthArchetype(50));
         addFieldArchetype(FRETE, faip142);
-        addFieldArchetype(FRETE_TOTAL_NF, fef);
+        addFieldArchetype(FRETE_TOTAL_NOTA_FISCAL, fef);
         addFieldArchetype(SEGURO, faip142);
-        addFieldArchetype(SEGURO_TOTAL_NF, fef);
+        addFieldArchetype(SEGURO_TOTAL_NOTA_FISCAL, fef);
         addFieldArchetype(DESPESA_ACESSORIA, faip142);
-        addFieldArchetype(DESPESA_ACESSORIA_TOTAL_NF, fef);
+        addFieldArchetype(DESPESA_ACESSORIA_TOTAL_NOTA_FISCAL, fef);
         addFieldArchetype(ACRESCIMO, faip142);
         addFieldArchetype(REDUCAO_BASE_CALCULO_ICMS, faip074);
         addFieldArchetype(VALOR_NAO_TRIBUTADO, faip142);

@@ -312,6 +312,9 @@ Convênio 115/03)<tr><td>
         faa.setFullFillingNullable(true);
         faa.setFullFiling(' ');
         
+        FieldDateFixedLengthArchetype faann = new FieldDateFixedLengthArchetype("yyyyMMdd");
+        faann.setFullFiling(' ');
+        
         FieldDecimalFixedLengthArchetype faip142 = new FieldDecimalFixedLengthArchetype(14, 2);
         faip142.setAcceptNullable(true);
         
@@ -331,7 +334,7 @@ Convênio 115/03)<tr><td>
         addFieldArchetype(CODIGO_CLIENTE_FORNECEDOR, fa);
         
         addFieldArchetype(DATA_EMISSAO, faa);
-        addFieldArchetype(DATA_ENTRADA_SAIDA, faa);
+        addFieldArchetype(DATA_ENTRADA_SAIDA, faann);
         
         addFieldArchetype(UF, new FieldStringFixedLengthArchetype(2));
         addFieldArchetype(MODELO, new FieldStringFixedLengthArchetype(2));

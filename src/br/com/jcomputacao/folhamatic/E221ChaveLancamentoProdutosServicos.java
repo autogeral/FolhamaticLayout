@@ -33,22 +33,22 @@ public class E221ChaveLancamentoProdutosServicos extends LineArchetype{
     /**
      * ESPÉCIE N.F.- Informe a espécie da nota fiscal.</br>    
      */
-    public static final String ESPECIE_NF = "ESPECIE_NF";
+    public static final String ESPECIE_NOTA_FISCAL = "ESPECIE_NOTA_FISCAL";
     
     /**
      * SÉRIE N.F. - Informe a série da nota fiscal.</br>   
      */
-    public static final String SERIE_NF = "SERIE_NF";
+    public static final String SERIE_NOTA_FISCAL = "SERIE_NOTA_FISCAL";
     
     /**
      * SUBSÉRIE N.F.- Informe a subsérie da nota fiscal.</br>    
      */
-    public static final String SUBSERIE_NF = "SUBSERIE_NF";
+    public static final String SUBSERIE_NOTA_FISCAL = "SUBSERIE_NOTA_FISCAL";
     
     /**
      * NÚMERO N.F. - Informe o número da nota fiscal.</br>    
      */
-    public static final String NUMERO_NF = "NUMERO_NF";
+    public static final String NUMERO_NOTA_FISCAL = "NUMERO_NOTA_FISCAL";
     
     /**
      * CÓDIGO DO CLIENTE/FORNECEDOR - Informe o código do cliente ou fornecedor da nota</br>
@@ -80,7 +80,7 @@ public class E221ChaveLancamentoProdutosServicos extends LineArchetype{
      * QUANTIDADE DE ITENS DA N.F. - Informe a quantidade de itens lançado na nota fiscal.</br>
      * Campo Obrigatório.</br>   
      */
-    public static final String QUANTIDADE_ITENS_NF = "QUANTIDADE_ITENS_NF";
+    public static final String QUANTIDADE_ITENS_NOTA_FISCAL = "QUANTIDADE_ITENS_NOTA_FISCAL";
     
     /**
      * QUANTIDADE DE ITENS DA N.F. - Informe a quantidade de itens lançado na nota fiscal.</br>
@@ -337,20 +337,19 @@ public class E221ChaveLancamentoProdutosServicos extends LineArchetype{
         FieldDecimalFixedLengthArchetype faip076 = new FieldDecimalFixedLengthArchetype(7, 6);
         faip076.setAcceptNullable(true);
         
-         FieldDecimalFixedLengthArchetype faip074 = new FieldDecimalFixedLengthArchetype(7, 4);
+        FieldDecimalFixedLengthArchetype faip074 = new FieldDecimalFixedLengthArchetype(7, 4);
         faip074.setAcceptNullable(true);
         
         FieldDecimalFixedLengthArchetype faip14 = new FieldDecimalFixedLengthArchetype(14, 0);
         faip14.setAcceptNullable(true);
-        
-        FieldDecimalFixedLengthArchetype faip60 = new FieldDecimalFixedLengthArchetype(60, 0);
-        faip60.setAcceptNullable(true);
         
         FieldDecimalFixedLengthArchetype faip133 = new FieldDecimalFixedLengthArchetype(13, 3);
         faip133.setAcceptNullable(true);
         
         FieldDecimalFixedLengthArchetype faip142 = new FieldDecimalFixedLengthArchetype(14, 2);
         faip142.setAcceptNullable(true);
+        
+        FieldDecimalFixedLengthArchetype faip142nn = new FieldDecimalFixedLengthArchetype(14, 2);
         
         FieldDecimalFixedLengthArchetype faip143 = new FieldDecimalFixedLengthArchetype(14, 3);
         faip143.setAcceptNullable(true);
@@ -377,17 +376,17 @@ public class E221ChaveLancamentoProdutosServicos extends LineArchetype{
         
         addFieldArchetype(NOME_REGISTRO, new FieldDefaultArchetype("E221"));
         addFieldArchetype(ENTRADA_SAIDA, fef);
-        addFieldArchetype(ESPECIE_NF, new FieldStringFixedLengthArchetype(5));
-        addFieldArchetype(SERIE_NF, new FieldStringFixedLengthArchetype(3));
-        addFieldArchetype(SUBSERIE_NF, new FieldStringFixedLengthArchetype(2));
-        addFieldArchetype(NUMERO_NF, new FieldIntegerFixedLengthArchetype(10));
+        addFieldArchetype(ESPECIE_NOTA_FISCAL, new FieldStringFixedLengthArchetype(5));
+        addFieldArchetype(SERIE_NOTA_FISCAL, new FieldStringFixedLengthArchetype(3));
+        addFieldArchetype(SUBSERIE_NOTA_FISCAL, new FieldStringFixedLengthArchetype(2));
+        addFieldArchetype(NUMERO_NOTA_FISCAL, new FieldIntegerFixedLengthArchetype(10));
         addFieldArchetype(CODIGO_CLIENTE_FORNECEDOR, new FieldStringFixedLengthArchetype(20));
 
         addFieldArchetype(FRETE, faip142);
         addFieldArchetype(SEGURO, faip142);
         addFieldArchetype(DESPESAS_ACESSORIAS, faip142);
-        addFieldArchetype(QUANTIDADE_ITENS_NF, new FieldIntegerFixedLengthArchetype(5));
-        addFieldArchetype(PIS_COFINS, faip142);
+        addFieldArchetype(QUANTIDADE_ITENS_NOTA_FISCAL, new FieldIntegerFixedLengthArchetype(5));
+        addFieldArchetype(PIS_COFINS, faip142nn);
         addFieldArchetype(PESO_BRUTO, faip133);
         addFieldArchetype(PESO_LIQUIDO, faip133);
         addFieldArchetype(VIA_TRANSPORTE, new FieldIntegerFixedLengthArchetype(1));
