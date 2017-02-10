@@ -251,7 +251,7 @@ Convênio 115/03)<tr><td>
      * NF for Conjugada ou "N" caso não seja. Se a empresa não utiliza o arquivo
      * Municipal "ISS Digital", preencha esse campo com espaços.
      */
-    private static final String NOTA_FISCAL_CONJUDADA = "NOTA_FISCAL_CONJUDADA";
+    private static final String NOTA_FISCAL_CONJUGADA = "NOTA_FISCAL_CONJUGADA";
     
     /**
      * Nº LINHAS DE LANÇAMENTO - Informe o número total de linhas de lançamento
@@ -261,7 +261,7 @@ Convênio 115/03)<tr><td>
      * então neste campo deverá constar 02. Este número total pode ser
      * identificado através do campo 27 do último registro E201 da nota.
      */
-    private static final String NUMERO_LINHAS_LANCMENTO = "NUMERO_LINHAS_LANCMENTO";
+    private static final String NUMERO_LINHAS_LANCAMENTO = "NUMERO_LINHAS_LANCAMENTO";
     
     /**
      * <br>DATA DE LANÇAMENTO NO SISTEMA</br>
@@ -312,6 +312,9 @@ Convênio 115/03)<tr><td>
         faa.setFullFillingNullable(true);
         faa.setFullFiling(' ');
         
+        FieldDecimalFixedLengthArchetype faip142 = new FieldDecimalFixedLengthArchetype(14, 2);
+        faip142.setAcceptNullable(true);
+        
         addFieldArchetype(NOME_REGISTRO, new FieldDefaultArchetype("E020"));
         addFieldArchetype(ENTRADA_OU_SAIDA, fef);
         addFieldArchetype(EPECIE_NOTA_FISCAL, new FieldStringFixedLengthArchetype(5));
@@ -329,5 +332,21 @@ Convênio 115/03)<tr><td>
         
         addFieldArchetype(DATA_EMISSAO, faa);
         addFieldArchetype(DATA_ENTRADA_SAIDA, faa);
+        
+        addFieldArchetype(UF, new FieldStringFixedLengthArchetype(2));
+        addFieldArchetype(MODELO, new FieldStringFixedLengthArchetype(2));
+        addFieldArchetype(EMITENTE, new FieldStringFixedLengthArchetype(1));
+        addFieldArchetype(SITUACAO, new FieldIntegerFixedLengthArchetype(2));
+        addFieldArchetype(JUSTIFICATIVA_CANCELAMENTO, new FieldStringFixedLengthArchetype(254));
+        addFieldArchetype(HORA_EMISSAO_NOTA_FISCAL, new FieldIntegerFixedLengthArchetype(6));
+        addFieldArchetype(HORA_ENTRADA_SAIDA_NOTA_FISCAL, new FieldIntegerFixedLengthArchetype(6));
+        addFieldArchetype(FRETE_TIPO, new FieldIntegerFixedLengthArchetype(1));
+        addFieldArchetype(VALOR_CONTABIL, faip142);
+        addFieldArchetype(CODIGO_INTEGRACAO_CONTABIL_IMPOSTOS_RETIDOS, new FieldStringFixedLengthArchetype(2));
+        addFieldArchetype(CODIGO_CONTA, new FieldStringFixedLengthArchetype(50));
+        addFieldArchetype(NOTA_FISCAL_CONJUGADA, new FieldStringFixedLengthArchetype(1));
+        addFieldArchetype(NUMERO_LINHAS_LANCAMENTO, new FieldIntegerFixedLengthArchetype(2));
+        addFieldArchetype(DATA_LANCAMENTO_SISTEMA, faa);
+
     }
 }
