@@ -437,7 +437,7 @@ public class E222LancamentoProdutosServicos extends LineArchetype{
         FieldEnumFixedLengthArchetype fef = new FieldEnumFixedLengthArchetype(1, FieldEnumFixedLengthArchetype.EnumType.STRING);
         fef.setAcceptNullable(true);
         fef.setFullFillingNullable(true);
-        fef.setFullFiling('N');
+        //fef.setFullFiling('N');
         
         addFieldArchetype(NOME_REGISTRO, new FieldDefaultArchetype("E222"));
         addFieldArchetype(ENTRADA_SAIDA, fef);
