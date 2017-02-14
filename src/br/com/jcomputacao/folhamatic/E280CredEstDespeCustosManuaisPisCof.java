@@ -11,19 +11,15 @@ import br.com.jcomputacao.aristoteles.field.FieldStringFixedLengthArchetype;
 import br.com.jcomputacao.aristoteles.line.LineArchetype;
 
 /**
- *
+ * Este registro somente deverá ser informado por empresas que recolhem o imposto PIS/COFINS como não cumulativo (empresas que apuram
+ * com base no Lucro Real), para informação manual no sistema, onde será informado o(s) valor(es) dos créditos a descontar, do(s) estorno(s) deste
+ * (s) créditos(s), e das despesas e custos de bens que as legislação permite.
+ * Estas informações serão importadas para o menu Imposto, Digitações Empresas, opção PIS/COFINS LUCRO REAL, para os respectivos campos
+ * deste layout.
  * @author DAVID.DIAS
  */
 public class E280CredEstDespeCustosManuaisPisCof extends LineArchetype{
-    
-    
-     /**
-     * Este registro somente deverá ser informado por empresas que recolhem o imposto PIS/COFINS como não cumulativo (empresas que apuram
-     * com base no Lucro Real), para informação manual no sistema, onde será informado o(s) valor(es) dos créditos a descontar, do(s) estorno(s) deste
-     * (s) créditos(s), e das despesas e custos de bens que as legislação permite.
-     * Estas informações serão importadas para o menu Imposto, Digitações Empresas, opção PIS/COFINS LUCRO REAL, para os respectivos campos
-     * deste layout.
-     */
+
     public static final String NOME_REGISTRO = "NOME_REGISTRO";
     
      /**
@@ -33,6 +29,7 @@ public class E280CredEstDespeCustosManuaisPisCof extends LineArchetype{
      * preenchido como um período válido sem espaço algum.
      * Ex. Mês 02/2003, no arquivo ficará:
      * 02/2003
+     * @
      */
     public static final String MES_ANO = "MES_ANO";
     

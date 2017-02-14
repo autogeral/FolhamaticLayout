@@ -13,23 +13,18 @@ import br.com.jcomputacao.aristoteles.field.FieldStringFixedLengthArchetype;
 import br.com.jcomputacao.aristoteles.line.LineArchetype;
 
 /**
- *
+ * Este registro importará informações para o lançamento das notas fiscais de entradas e saídas, no botão Informações
+ * Complementares/Observações, opção Diferencial de Alíquotas - EC 87/15, portanto, ao importar este registro as notas fiscais de entradas e
+ * saídas nele mencionadas já deverão estar lançadas no sistema ou constando nos Registros E200 e E201.</br>
+ * Poderá existir apenas um registro por documento fiscal.</br>
+ * Estas informações serão utilizadas na geração da EFD - Escrituração Fiscal Digital e geração da DeSTDA, para período a partir de 01/2016.</br>
+ * Gere este registro para notas fiscais modelo 55 ou 57.</br>
+ * Este registro tem por objetivo receber as informações correspondentes ao ICMS devido para a Unidade da Federação de Origem/Destino, nas
+ * operações interestaduais de venda para consumidor final não contribuinte, atendendo as definições da Emenda Constitucional 87/2015.</br>
+ * 
  * @author DAVID.DIAS
  */
 public class E207DiferencialAliquotaEC8715 extends LineArchetype{
-    
-    /**
-     * Este registro importará informações para o lançamento das notas fiscais de entradas e saídas, no botão Informações
-     * Complementares/Observações, opção Diferencial de Alíquotas - EC 87/15, portanto, ao importar este registro as notas fiscais de entradas e
-     * saídas nele mencionadas já deverão estar lançadas no sistema ou constando nos Registros E200 e E201.</br>
-     * Poderá existir apenas um registro por documento fiscal.</br>
-     * Estas informações serão utilizadas na geração da EFD - Escrituração Fiscal Digital e geração da DeSTDA, para período a partir de 01/2016.</br>
-     * Gere este registro para notas fiscais modelo 55 ou 57.</br>
-     * Este registro tem por objetivo receber as informações correspondentes ao ICMS devido para a Unidade da Federação de Origem/Destino, nas
-     * operações interestaduais de venda para consumidor final não contribuinte, atendendo as definições da Emenda Constitucional 87/2015.</br>
-     * 
-     * 
-     */
 
     public static final String NOME_REGISTRO = "NOME_REGISTRO";
     /**

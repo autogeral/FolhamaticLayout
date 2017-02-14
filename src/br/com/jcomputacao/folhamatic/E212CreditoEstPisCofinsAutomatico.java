@@ -13,24 +13,25 @@ import br.com.jcomputacao.aristoteles.field.FieldStringFixedLengthArchetype;
 import br.com.jcomputacao.aristoteles.line.LineArchetype;
 
 /**
- *
+ * Este registro deverá ser gerado por empresas que recolham o imposto 
+ * PIS/COFINS como não cumulativo (empresas que apuram com base no
+ * Lucro Real).
+ * As informações deste registro serão utilizadas para o calcular o valor a 
+ * descontar ou adicionar no PIS e COFINS e serão importadas para o
+ * lançamento das notas fiscais de entradas e saídas, portanto, ao importar 
+ * este registro as notas fiscais de entradas e saídas nele mencionadas já
+ * deverão estar lançadas no sistema ou constando nos Registros E200 e E201.
+ * Poderão existir vários registros E212 por linha de lançamento da nota fiscal, 
+ * portanto, a ordem das linhas de lançamento serão apresentadas no
+ * sistema conforme a definição do campo 08 deste registro no arquivo.
+ * 
  * @author DAVID.DIAS
  */
 public class E212CreditoEstPisCofinsAutomatico extends LineArchetype{
 
     
     /**
-     * Este registro deverá ser gerado por empresas que recolham o imposto 
-     * PIS/COFINS como não cumulativo (empresas que apuram com base no
-     * Lucro Real).
-     * As informações deste registro serão utilizadas para o calcular o valor a 
-     * descontar ou adicionar no PIS e COFINS e serão importadas para o
-     * lançamento das notas fiscais de entradas e saídas, portanto, ao importar 
-     * este registro as notas fiscais de entradas e saídas nele mencionadas já
-     * deverão estar lançadas no sistema ou constando nos Registros E200 e E201.
-     * Poderão existir vários registros E212 por linha de lançamento da nota fiscal, 
-     * portanto, a ordem das linhas de lançamento serão apresentadas no
-     * sistema conforme a definição do campo 08 deste registro no arquivo.
+
      */
     
     public static final String NOME_REGISTRO = "NOME_REGISTRO";

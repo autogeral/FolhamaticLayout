@@ -12,18 +12,16 @@ import br.com.jcomputacao.aristoteles.field.FieldStringFixedLengthArchetype;
 import br.com.jcomputacao.aristoteles.line.LineArchetype;
 
 /**
- *
+ * Este registro importará informações para o lançamento das notas 
+ * fiscais de entradas, botão Impostos Retidos, portanto, ao importar este registro
+ * as notas fiscais de saídas nele mencionadas já deverão estar lançadas 
+ * no sistema ou constando nos Registros E200 e E201.
+ * OBS: Poderá existir apenas um registro E216 por nota fiscal.
+ * 
  * @author DAVID.DIAS
  */
 public class E216IrrfSeguroSocialImpostoRetidoNfEntradas  extends LineArchetype{
-    
-    /**
-     * Este registro importará informações para o lançamento das notas 
-     * fiscais de entradas, botão Impostos Retidos, portanto, ao importar este registro
-     * as notas fiscais de saídas nele mencionadas já deverão estar lançadas 
-     * no sistema ou constando nos Registros E200 e E201.
-     * OBS: Poderá existir apenas um registro E216 por nota fiscal.
-     */
+
     public static final String NOME_REGISTRO = "NOME_REGISTRO";
     
     public static final String ESPECIE_NOTA_FISCAL = "ESPECIE_NOTA_FISCAL";

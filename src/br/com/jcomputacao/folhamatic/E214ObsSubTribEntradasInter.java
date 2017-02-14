@@ -14,24 +14,21 @@ import br.com.jcomputacao.aristoteles.field.FieldStringFixedLengthArchetype;
 import br.com.jcomputacao.aristoteles.line.LineArchetype;
 
 /**
+ * Este registro deverá ser gerado por empresas do estado de São Paulo, atacadistas ou varejistas, 
+ * que recolheram o ICMS por Antecipação
+ * Tributária conforme artigo 426-A do RICMS/SP.
+ * Somente deverá ser gerado este registro por empresas substituídas e para notas fiscais de entradas 
+ * interestaduais (CFOP´s início 2).
+ * As informações deste registro serão importadas para o lançamento das notas fiscais de entradas,
+ * portanto, ao importar este registro, as notas
+ * fiscais nele mencionadas já deverão estar lançadas no sistema ou constando nos Registros E200 e E201.
+ * Após importado, as informações serão demonstradas no livro de entradas conforme artigo 277 do RICMS/SP.
+ * OBS: Poderão existir vários registros E214 por nota fiscal.
  *
  * @author DAVID.DIAS
  */
 public class E214ObsSubTribEntradasInter extends LineArchetype{
-    
-    /**
-     * Este registro deverá ser gerado por empresas do estado de São Paulo, atacadistas ou varejistas, 
-     * que recolheram o ICMS por Antecipação
-     * Tributária conforme artigo 426-A do RICMS/SP.
-     * Somente deverá ser gerado este registro por empresas substituídas e para notas fiscais de entradas 
-     * interestaduais (CFOP´s início 2).
-     * As informações deste registro serão importadas para o lançamento das notas fiscais de entradas,
-     * portanto, ao importar este registro, as notas
-     * fiscais nele mencionadas já deverão estar lançadas no sistema ou constando nos Registros E200 e E201.
-     * Após importado, as informações serão demonstradas no livro de entradas conforme artigo 277 do RICMS/SP.
-     * OBS: Poderão existir vários registros E214 por nota fiscal.
-     */
-    
+
     public static final String NOME_REGISTRO = "NOME_REGISTRO";
     
      /**
