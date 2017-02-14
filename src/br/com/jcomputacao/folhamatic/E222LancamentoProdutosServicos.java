@@ -69,6 +69,7 @@ public class E222LancamentoProdutosServicos extends LineArchetype{
      * de 18% informar no arquivo 0180000.</br>
      */
     public static final String ALIQUOTA_ICMS = "ALIQUOTA_ICMS";
+    
      /**
      * QUANTIDADE - Informe a quantidade do produto/serviço.</br>
      */
