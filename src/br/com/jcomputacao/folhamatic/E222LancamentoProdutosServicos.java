@@ -117,11 +117,11 @@ public class E222LancamentoProdutosServicos extends LineArchetype{
      * BC DO IPI - Informe o valor da Base de Cálculo do IPI do produto/serviço. Quando se tratar
      * de cupom fiscal, zerar este campo.</br>
      */
-    public static final String BC_DO_IPI = "BC_DO_IPI";
+    public static final String BC_IPI = "BC_IPI";
      /**
      * VALOR DO ICMS - Informe o valor de ICMS do produto/serviço.</br>
      */
-    public static final String VALOR_DO_ICMS = "VALOR_DO_ICMS";
+    public static final String VALOR_ICMS = "VALOR_ICMS";
      /**
      * ISENTOS DE ICMS - Informe o valor Isento de ICMS do produto/serviço.</br>
      */
@@ -138,7 +138,7 @@ public class E222LancamentoProdutosServicos extends LineArchetype{
      /**
      * ICMS SUBST. TRIB. - Informe o valor do ICMS Substituição Tributária do produto/serviço.</br>
      */
-    public static final String ICMS_SUBSTIRUICAO_TRIBUTARIA = "ICMS_SUBSTIRUICAO_TRIBUTARIA";
+    public static final String ICMS_ST = "ICMS_ST";
      /**
      * MOVIMENTAÇÃO FÍSICA DA MERCADORIA - Informe "S" se houve movimentação física
      * da mercadoria, ou "N" se não houve.</br>
@@ -460,12 +460,12 @@ public class E222LancamentoProdutosServicos extends LineArchetype{
         addFieldArchetype(VALOR_IPI, faip142);
         addFieldArchetype(VALOR_UNITARIO, faip144);
         addFieldArchetype(NUMERO_DI_DSI,new FieldIntegerFixedLengthArchetype(10) );
-        addFieldArchetype(BC_DO_IPI,faip142);
-        addFieldArchetype(VALOR_DO_ICMS, faip142);
+        addFieldArchetype(BC_IPI,faip142);
+        addFieldArchetype(VALOR_ICMS, faip142);
         addFieldArchetype(ISENTOS_ICMS, faip142);
         addFieldArchetype(OUTROS_ICMS,faip142 );
         addFieldArchetype(N_COO, new FieldIntegerFixedLengthArchetype(10));
-        addFieldArchetype(ICMS_SUBSTIRUICAO_TRIBUTARIA,faip142 );
+        addFieldArchetype(ICMS_ST,faip142 );
         addFieldArchetype(MOVIMENTACAO_FISICA_MERCADORIA, fef);
         addFieldArchetype(ISENTOS_IPI, faip142);
         addFieldArchetype(OUTROS_IPI, faip142);
@@ -480,7 +480,7 @@ public class E222LancamentoProdutosServicos extends LineArchetype{
         addFieldArchetype(DESCRICAO_COMPLEMENTAR_PRODUTO,  new FieldStringFixedLengthArchetype(50));
         addFieldArchetype(FATOR_CONVERSAO, faip146);
         addFieldArchetype(ALIQUOTA_ICMS_ST, faip062);
-        addFieldArchetype(ST_ICMS_TABELA_A, new FieldStringFixedLengthArchetype(1));
+        addFieldArchetype(ST_ICMS_TABELA_A, new FieldStringFixedLengthArchetype(2));// no manual consta 1, mas acredito que são 2
         addFieldArchetype(ST_ICMS_TABELA_B, new FieldStringFixedLengthArchetype(2));
         addFieldArchetype(ST_IPI,  new FieldStringFixedLengthArchetype(2));
         addFieldArchetype(APURACAO_DISTINTA_IPI,  new FieldStringFixedLengthArchetype(1));

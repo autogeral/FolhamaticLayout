@@ -54,7 +54,7 @@ public class E201LancamentoImpostoNotaFiscal extends LineArchetype{
      * Exemplo: Se no sistema E-Fiscal o cliente/fornecedor está cadastrado com o código "01" e</br>  
      * no sistema de faturamento com código "10", informe "10" neste campo.</br>    
      */
-    public static final String CODIGO_CLIENTE_FORNCEDOR = "CODIGO_CLIENTE_FORNCEDOR";
+    public static final String CODIGO_CLIENTE_FORNECEDOR = "CODIGO_CLIENTE_FORNECEDOR";
     
     /**
      * CFOP - Informe o CFOP constante na nota fiscal. Campo obrigatório.</br>    
@@ -434,13 +434,13 @@ public class E201LancamentoImpostoNotaFiscal extends LineArchetype{
         faa.setFullFillingNullable(true);
         faa.setFullFiling(' ');
         
-        addFieldArchetype(NOME_REGISTRO, new FieldStringFixedLengthArchetype(4));
+        addFieldArchetype(NOME_REGISTRO, new FieldDefaultArchetype("E201"));
         addFieldArchetype(ENTRADA_SAIDA, fef);
         addFieldArchetype(ESPECIE_NOTA_FISCAL, new FieldStringFixedLengthArchetype(5));
         addFieldArchetype(SERIE_NOTA_FISCAL, new FieldStringFixedLengthArchetype(3));
         addFieldArchetype(SUBSERIE_NOTA_FISCAL, new FieldStringFixedLengthArchetype(2));
         addFieldArchetype(NUMERO_NOTA_FISCAL, new FieldIntegerFixedLengthArchetype(10));
-        addFieldArchetype(CODIGO_CLIENTE_FORNCEDOR, new FieldStringFixedLengthArchetype(20));
+        addFieldArchetype(CODIGO_CLIENTE_FORNECEDOR, new FieldStringFixedLengthArchetype(20));
         addFieldArchetype(CFOP, new FieldIntegerFixedLengthArchetype(4));
         addFieldArchetype(CI, new FieldStringFixedLengthArchetype(2));
         addFieldArchetype(TIPO_PAGAMENTO, new FieldIntegerFixedLengthArchetype(1));
@@ -469,7 +469,7 @@ public class E201LancamentoImpostoNotaFiscal extends LineArchetype{
         addFieldArchetype(VENDA_ENTREGA_FUTURA, new FieldStringFixedLengthArchetype(1));
         addFieldArchetype(OPER_PREST_MERC_SUJ_REGIME_ST_SAIDA, new FieldStringFixedLengthArchetype(1));
         addFieldArchetype(NUMERO_TOTALIZADOR, new FieldStringFixedLengthArchetype(2));
-        addFieldArchetype(ST_ICMS_TABELA_A, new FieldStringFixedLengthArchetype(1));
+        addFieldArchetype(ST_ICMS_TABELA_A, new FieldStringFixedLengthArchetype(2));// no manual diz 1, mas deve ser 2
         addFieldArchetype(ST_ICMS_TABELA_B, new FieldStringFixedLengthArchetype(2));
         addFieldArchetype(ST_IPI_CTIPI, new FieldStringFixedLengthArchetype(2));
         addFieldArchetype(CIAP_SAIDA_TRIBUTADA, new FieldStringFixedLengthArchetype(1));

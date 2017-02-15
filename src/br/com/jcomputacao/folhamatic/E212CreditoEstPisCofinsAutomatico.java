@@ -29,11 +29,6 @@ import br.com.jcomputacao.aristoteles.line.LineArchetype;
  */
 public class E212CreditoEstPisCofinsAutomatico extends LineArchetype{
 
-    
-    /**
-
-     */
-    
     public static final String NOME_REGISTRO = "NOME_REGISTRO";
     /**
      * Preencher com "E" para nota fiscal de entrada ou com "S" quando de saída.
