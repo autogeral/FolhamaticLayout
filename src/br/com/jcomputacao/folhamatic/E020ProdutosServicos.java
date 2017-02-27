@@ -487,8 +487,9 @@ public class E020ProdutosServicos extends LineArchetype {
         f9.setAcceptNullable(true);
         f9.setFullFiling(' ');
         addFieldArchetype(CODIGO_ANP, f9);
-        addFieldArchetype(CODIGO_UNIDADE_COMERCIAL, new FieldIntegerFixedLengthArchetype(6));
-        addFieldArchetype(CODIGO_UNIDADE_ESTOQUE, new FieldIntegerFixedLengthArchetype(6));
+        FieldIntegerFixedLengthArchetype fi6 = new FieldIntegerFixedLengthArchetype(6);
+        addFieldArchetype(CODIGO_UNIDADE_COMERCIAL, fi6);
+        addFieldArchetype(CODIGO_UNIDADE_ESTOQUE, fi6);
         FieldDecimalFixedLengthArchetype fd = new FieldDecimalFixedLengthArchetype(14, 6);
         fd.setAcceptNullable(true);
         addFieldArchetype(FATOR_CONVERSAO, fd);

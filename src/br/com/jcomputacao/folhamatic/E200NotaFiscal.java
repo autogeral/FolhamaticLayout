@@ -324,6 +324,7 @@ public class E200NotaFiscal extends LineArchetype {
         addFieldArchetype(SERIE_NOTA_FISCAL, new FieldStringFixedLengthArchetype(3));
         
         FieldStringFixedLengthArchetype f2 = new FieldStringFixedLengthArchetype(2);
+        f2.setAcceptNullable(true);
         addFieldArchetype(SUBSERIE_NOTA_FISCAL, f2);
         addFieldArchetype(NUMERO_INICIAL_NOTA_FISCAL, new FieldIntegerFixedLengthArchetype<Long>(10));
         addFieldArchetype(NUMERO_FINAL_NOTA_FISCAL, new FieldIntegerFixedLengthArchetype<Long>(10));
