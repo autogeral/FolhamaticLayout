@@ -119,35 +119,35 @@ public class E200NotaFiscal extends LineArchetype {
      * <table>
      * <thead><tr><th>Código</th><th>Descrição</th><th>Modelo</th><th>Registro Pai</th></tr></threa>
      * <tbody><tr><td>01</td><td>Nota Fiscal</td><td>1/1A</td><td>C100<tr><td><tr><td>1B</td><td>Nota Fiscal Avulsa - C100<tr><td>
-     * <tr><td>02</td><td>Nota Fiscal de Venda a Consumidor 2 C300 ou C350 ou C400 (emissão por ECF)<tr><td>
+     * <tr><td>02</td><td>Nota Fiscal de Venda a Consumidor</td><td>2</td><td>C300 ou C350 ou C400 (emissão por ECF)<tr><td>
      * <tr><td>2D</td><td>Cupom Fiscal - C400<tr><td>
-<tr><td>2E</td><td>Cupom Fiscal Bilhete de Passagem - D350 (emissão por ECF)<tr><td>
-<tr><td>04</td><td>Nota Fiscal de Produtor 4 C100<tr><td>
-<tr><td>06</td><td>Nota Fiscal/Conta de Energia Elétrica 6 Se aquisição C500;
-Se fornecimento: C500 ou C600; C700 (somente
-empresas obrigadas aos arquivos previstos no
-Convênio 115/03)<tr><td>
-<tr><td>07</td><td>Nota Fiscal de Serviço de Transporte 7 D100<tr><td>
-<tr><td>08</td><td>Conhecimento de Transporte Rodoviário de Cargas 8 D100<tr><td>
-<tr><td>8B</td><td>Conhecimento de Transporte de Cargas Avulso - D100<tr><td>
-<tr><td>09</td><td>Conhecimento de Transporte Aquaviário de Cargas 9 D100<tr><td>
-<tr><td>10</td><td>Conhecimento Aéreo 10 D100<tr><td>
-<tr><td>11</td><td>Conhecimento de Transporte Ferroviário de Cargas 11 D100<tr><td>
-<tr><td>13</td><td>Bilhete de Passagem Rodoviário 13 D300<tr><td>
-<tr><td>14</td><td>Bilhete de Passagem Aquaviário 14 D300<tr><td>
-<tr><td>15</td><td>Bilhete de Passagem e Nota de Bagagem 15 D300<tr><td>
-<tr><td>16</td><td>Bilhete de Passagem Ferroviário 16 D300<tr><td>
-<tr><td>18</td><td>Resumo de Movimento Diário 18 D400<tr><td>
-<tr><td>21</td><td>Nota Fiscal de Serviço de Comunicação</td><td>21</td><td><p>Se aquisição: D500;</p><p>Se prestação: D500 ou D600;</p><p>D695 (somente empresas obrigadas aos arquivos</p><p>previstos no Convênio 115/03)</p><tr><td></tr>
-<tr><td>22</td><td>Nota Fiscal de Serviço de Telecomunicação</td><td>22</td><td><p>Se aquisição: D500;</p><p>Se prestação: D500 ou D600; ou</p><p>D695 (somente empresas obrigadas aos arquivos</p><p>previstos no Convênio 115/03)</p></td></tr>
-<tr><td>26 Conhecimento de Transporte Multimodal de Cargas 26 D100<tr><td>
-<tr><td>27 Nota Fiscal De Transporte Ferroviário De Carga D100<tr><td>
-<tr><td>28 Nota Fiscal/Conta de Fornecimento de Gás Canalizado - C500 ou C600<tr><td>
-<tr><td>29 Nota Fiscal/Conta de Fornecimento de Água Canalizada - C500 ou C600<tr><td>
-<tr><td>55 Nota Fiscal Eletrônica – NF-e 55 C100<tr><td>
-<tr><td>57 Conhecimento de Transporte Eletrônico - CT-e 57 D100<tr><td>
-<tr><td>59 Cupom Fiscal Eletrônico – CF-e 59 C800 ou C850<tr><td>
-</tbody></table>
+     * <tr><td>2E</td><td>Cupom Fiscal Bilhete de Passagem - D350 (emissão por ECF)<tr><td>
+     * <tr><td>04</td><td>Nota Fiscal de Produtor 4 C100<tr><td>
+     * <tr><td>06</td><td>Nota Fiscal/Conta de Energia Elétrica 6 Se aquisição C500;
+     * Se fornecimento: C500 ou C600; C700 (somente
+     * empresas obrigadas aos arquivos previstos no
+     *Convênio 115/03)<tr><td>
+     * <tr><td>07</td><td>Nota Fiscal de Serviço de Transporte 7 D100<tr><td>
+     * <tr><td>08</td><td>Conhecimento de Transporte Rodoviário de Cargas 8 D100<tr><td>
+     * <tr><td>8B</td><td>Conhecimento de Transporte de Cargas Avulso - D100<tr><td>
+     * <tr><td>09</td><td>Conhecimento de Transporte Aquaviário de Cargas 9 D100<tr><td>
+     * <tr><td>10</td><td>Conhecimento Aéreo 10 D100<tr><td>
+     * <tr><td>11</td><td>Conhecimento de Transporte Ferroviário de Cargas 11 D100<tr><td>
+     * <tr><td>13</td><td>Bilhete de Passagem Rodoviário 13 D300<tr><td>
+     * <tr><td>14</td><td>Bilhete de Passagem Aquaviário 14 D300<tr><td>
+     * <tr><td>15</td><td>Bilhete de Passagem e Nota de Bagagem 15 D300<tr><td>
+     * <tr><td>16</td><td>Bilhete de Passagem Ferroviário 16 D300<tr><td>
+     * <tr><td>18</td><td>Resumo de Movimento Diário<tr><td>09</td><td>Conhecimento de Transporte Aquaviário de Cargas 9 D100<tr><td> 18 D400<tr><td>
+     * <tr><td>21</td><td>Nota Fiscal de Serviço de Comunicação</td><td>21</td><td><p>Se aquisição: D500;</p><p>Se prestação: D500 ou D600;</p><p>D695 (somente empresas obrigadas aos arquivos</p><p>previstos no Convênio 115/03)</p><tr><td></tr>
+     * <tr><td>22</td><td>Nota Fiscal de Serviço de Telecomunicação</td><td>22</td><td><p>Se aquisição: D500;</p><p>Se prestação: D500 ou D600; ou</p><p>D695 (somente empresas obrigadas aos arquivos</p><p>previstos no Convênio 115/03)</p></td></tr>
+     * <tr><td>26 Conhecimento de Transporte Multimodal de Cargas 26 D100<tr><td>
+     * <tr><td>27 Nota Fiscal De Transporte Ferroviário De Carga D100<tr><td>
+     * <tr><td>28 Nota Fiscal/Conta de Fornecimento de Gás Canalizado - C500 ou C600<tr><td>
+     * <tr><td>29 Nota Fiscal/Conta de Fornecimento de Água Canalizada - C500 ou C600<tr><td>
+     * <tr><td>55 Nota Fiscal Eletrônica – NF-e 55 C100<tr><td>
+     * <tr><td>57 Conhecimento de Transporte Eletrônico - CT-e 57 D100<tr><td>
+     * <tr><td>59 Cupom Fiscal Eletrônico – CF-e 59 C800 ou C850<tr><td>
+     * </tbody></table>
      */
     public static final String MODELO = "MODELO";
     /**
