@@ -2,10 +2,6 @@
 package br.com.jcomputacao.folhamatic;
 
 import br.com.jcomputacao.aristoteles.line.LineModel;
-import static br.com.jcomputacao.folhamatic.E222LancamentoProdutosServicos.ICMS_ST;
-import static br.com.jcomputacao.folhamatic.E222LancamentoProdutosServicos.MOVIMENTACAO_FISICA_MERCADORIA;
-import static br.com.jcomputacao.folhamatic.E222LancamentoProdutosServicos.N_ITEM;
-import static br.com.jcomputacao.folhamatic.E222LancamentoProdutosServicos.OUTROS_ICMS;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

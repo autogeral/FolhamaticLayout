@@ -2,7 +2,6 @@
 package br.com.jcomputacao.folhamatic;
 
 import br.com.jcomputacao.aristoteles.line.LineModel;
-import java.util.Date;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
