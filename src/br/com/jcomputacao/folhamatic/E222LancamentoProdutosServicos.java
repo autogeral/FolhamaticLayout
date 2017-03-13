@@ -1,11 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.jcomputacao.folhamatic;
 
-import br.com.jcomputacao.aristoteles.field.FieldDateFixedLengthArchetype;
 import br.com.jcomputacao.aristoteles.field.FieldDecimalFixedLengthArchetype;
 import br.com.jcomputacao.aristoteles.field.FieldDefaultArchetype;
 import br.com.jcomputacao.aristoteles.field.FieldEnumFixedLengthArchetype;
@@ -53,7 +47,7 @@ public class E222LancamentoProdutosServicos extends LineArchetype{
      * OBS: O validador do arquivo magnético SINTEGRA (Convênios 69/02 e 142/02) não aceita
      * que o produto seja de itens 991 a 999.</br>
      */
-    public static final String N_ITEM = "N_ITEM";
+    public static final String NUMERO_ITEM = "NUMERO_ITEM";
      /**
      * CFOP - Informe o CFOP do item.</br>
      * Ex. 1101, 5101</br>
@@ -447,7 +441,7 @@ public class E222LancamentoProdutosServicos extends LineArchetype{
         addFieldArchetype(SUBSERIE_NOTA_FISCAL, new FieldStringFixedLengthArchetype(2));
         addFieldArchetype(NUMERO_NOTA_FISCAL, new FieldIntegerFixedLengthArchetype(10));
         addFieldArchetype(CODIGO_CLIENTE_FORNECEDOR, new FieldStringFixedLengthArchetype(20));
-        addFieldArchetype(N_ITEM, new FieldIntegerFixedLengthArchetype(3));
+        addFieldArchetype(NUMERO_ITEM, new FieldIntegerFixedLengthArchetype(3));
         addFieldArchetype(CFOP,  new FieldStringFixedLengthArchetype(4));
         addFieldArchetype(CODIGO_PRODUTO_SERVICO,  new FieldStringFixedLengthArchetype(12));
         addFieldArchetype(ALIQUOTA_ICMS, faip074);

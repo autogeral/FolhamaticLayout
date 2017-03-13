@@ -39,7 +39,7 @@ public class E200NotaFiscal extends LineArchetype {
     /**
      * ESPÉCIE N.F. - Informe a espécie da nota fiscal.</br>
      */
-    public static final String EPECIE_NOTA_FISCAL = "EPECIE_NOTA_FISCAL";
+    public static final String ESPECIE_NOTA_FISCAL = "ESPECIE_NOTA_FISCAL";
     /**
      * <br>SÉRIE N.F.</br>
      * <br>Informe a série da nota fiscal conforme Tabela de Orientações de Séries e Subséries.</br>
@@ -327,7 +327,7 @@ public class E200NotaFiscal extends LineArchetype {
         
         addFieldArchetype(NOME_REGISTRO, new FieldDefaultArchetype("E020"));
         addFieldArchetype(ENTRADA_OU_SAIDA, fef);
-        addFieldArchetype(EPECIE_NOTA_FISCAL, new FieldStringFixedLengthArchetype(5));
+        addFieldArchetype(ESPECIE_NOTA_FISCAL, new FieldStringFixedLengthArchetype(5));
         addFieldArchetype(SERIE_NOTA_FISCAL, new FieldStringFixedLengthArchetype(3));
         
         FieldStringFixedLengthArchetype f2 = new FieldStringFixedLengthArchetype(2);

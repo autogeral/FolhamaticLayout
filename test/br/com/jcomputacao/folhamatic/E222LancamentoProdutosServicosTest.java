@@ -46,7 +46,7 @@ public class E222LancamentoProdutosServicosTest {
         lm.setFieldValue(E222LancamentoProdutosServicos.SUBSERIE_NOTA_FISCAL, "12");
         lm.setFieldValue(E222LancamentoProdutosServicos.NUMERO_NOTA_FISCAL, 1234567890);
         lm.setFieldValue(E222LancamentoProdutosServicos.CODIGO_CLIENTE_FORNECEDOR, "J. Computação ltda");
-        lm.setFieldValue(E222LancamentoProdutosServicos.N_ITEM, 123);
+        lm.setFieldValue(E222LancamentoProdutosServicos.NUMERO_ITEM, 123);
         lm.setFieldValue(E222LancamentoProdutosServicos.CFOP, "1000");
         lm.setFieldValue(E222LancamentoProdutosServicos.CODIGO_PRODUTO_SERVICO, "0234423321");
         lm.setFieldValue(E222LancamentoProdutosServicos.ALIQUOTA_ICMS, 444.4444); 

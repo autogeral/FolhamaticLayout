@@ -45,7 +45,7 @@ public class E200NotaFiscalTest {
         Date data = sdf.parse("01/01/2017");
         
         lm.setFieldValue(E200NotaFiscal.ENTRADA_OU_SAIDA, data);
-        lm.setFieldValue(E200NotaFiscal.EPECIE_NOTA_FISCAL, "NFe");
+        lm.setFieldValue(E200NotaFiscal.ESPECIE_NOTA_FISCAL, "NFe");
         lm.setFieldValue(E200NotaFiscal.SERIE_NOTA_FISCAL, "01");
         
         lm.setFieldValue(E200NotaFiscal.SUBSERIE_NOTA_FISCAL, "99");
