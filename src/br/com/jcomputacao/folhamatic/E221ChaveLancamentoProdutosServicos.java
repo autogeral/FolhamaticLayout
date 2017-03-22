@@ -406,7 +406,7 @@ public class E221ChaveLancamentoProdutosServicos extends LineArchetype{
         addFieldArchetype(ESTADO_RECEBIMENTO_MERCADORIA, new FieldStringFixedLengthArchetype(2));
         addFieldArchetype(IE_RECEBIMENTO_MERCADORIA, new FieldStringFixedLengthArchetype(18));
         addFieldArchetype(UF_TRANSPORTADOR, new FieldStringFixedLengthArchetype(2));
-        addFieldArchetype(CONTROLE_SISTEMA, new FieldIntegerFixedLengthArchetype(1));
+        addFieldArchetype(CONTROLE_SISTEMA, new FieldDefaultArchetype("0"));
     }
     
 }

@@ -499,9 +499,7 @@ public class E222LancamentoProdutosServicos extends LineArchetype{
         
         addFieldArchetype(DESCONTO_INCONDICIONAL, fefDI);
         addFieldArchetype(CSONS, new FieldStringFixedLengthArchetype(3));
-        FieldIntegerFixedLengthArchetype cs = new FieldIntegerFixedLengthArchetype(10);
-        cs.setFullFiling('0');
-        addFieldArchetype(CONTROLE_SISTEMA, cs);
+        addFieldArchetype(CONTROLE_SISTEMA, new FieldDefaultArchetype("0"));
         
     }
     
