@@ -78,7 +78,7 @@ public class E221ChaveLancamentoProdutosServicos extends LineArchetype{
     public static final String QUANTIDADE_ITENS_NOTA_FISCAL = "QUANTIDADE_ITENS_NOTA_FISCAL";
     
     /**
-     * QUANTIDADE DE ITENS DA N.F. - Informe o valor de Pis e Cofins retido anteriormente (valor destacado na nota fiscal). Quando se tratar de cupom fiscal, zerar este campo.</br>
+     * PIS/COFINS - Informe o valor de Pis e Cofins retido anteriormente (valor destacado na nota fiscal). Quando se tratar de cupom fiscal, zerar este campo.</br>
      * Campo Obrigatório.</br>    
      */
     public static final String PIS_COFINS = "PIS_COFINS";
@@ -408,8 +408,5 @@ public class E221ChaveLancamentoProdutosServicos extends LineArchetype{
         addFieldArchetype(UF_TRANSPORTADOR, new FieldStringFixedLengthArchetype(2));
         addFieldArchetype(CONTROLE_SISTEMA, new FieldIntegerFixedLengthArchetype(1));
     }
-    
-    
-    
     
 }
