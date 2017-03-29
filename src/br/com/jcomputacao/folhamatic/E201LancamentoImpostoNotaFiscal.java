@@ -390,6 +390,7 @@ public class E201LancamentoImpostoNotaFiscal extends LineArchetype{
         
         FieldDecimalFixedLengthArchetype faip063 = new FieldDecimalFixedLengthArchetype(6, 3);
         faip063.setAcceptNullable(true);
+//        faip063.setFullFiling('0');
         
         FieldDecimalFixedLengthArchetype faip076 = new FieldDecimalFixedLengthArchetype(7, 6);
         faip076.setAcceptNullable(true);
@@ -421,7 +422,7 @@ public class E201LancamentoImpostoNotaFiscal extends LineArchetype{
         FieldEnumFixedLengthArchetype fef = new FieldEnumFixedLengthArchetype(1, FieldEnumFixedLengthArchetype.EnumType.STRING);
         fef.setAcceptNullable(true);
         fef.setFullFillingNullable(true);
-        fef.setFullFiling('N');
+        fef.setFullFiling(' ');
         
         // D
         FieldDateFixedLengthArchetype faa = new FieldDateFixedLengthArchetype("yyyyMMdd");
@@ -437,10 +438,17 @@ public class E201LancamentoImpostoNotaFiscal extends LineArchetype{
         addFieldArchetype(NUMERO_NOTA_FISCAL, new FieldIntegerFixedLengthArchetype(10));
         addFieldArchetype(CODIGO_CLIENTE_FORNECEDOR, new FieldStringFixedLengthArchetype(20));
         addFieldArchetype(CFOP, new FieldIntegerFixedLengthArchetype(4));
-        addFieldArchetype(CI, new FieldStringFixedLengthArchetype(2));
+        
+        FieldStringFixedLengthArchetype fs2 = new FieldStringFixedLengthArchetype(2);
+        fs2.setAcceptNullable(true);
+        addFieldArchetype(CI, fs2);
+        
         addFieldArchetype(TIPO_PAGAMENTO, new FieldIntegerFixedLengthArchetype(1));
         addFieldArchetype(BC_ICMS, faip142);
-        addFieldArchetype(CODIGO_TURBO, new FieldIntegerFixedLengthArchetype(3));
+        FieldIntegerFixedLengthArchetype fi3 = new FieldIntegerFixedLengthArchetype(3);
+        fi3.setAcceptNullable(true);
+        fi3.setFullFiling(' ');
+        addFieldArchetype(CODIGO_TURBO, fi3);
         addFieldArchetype(REDUCAO_BASE_CALCULO_ICMS, faip063);
         addFieldArchetype(ALIQUOTA_ICMS, faip074);
         addFieldArchetype(VALOR_ICMS, faip142);
@@ -449,25 +457,32 @@ public class E201LancamentoImpostoNotaFiscal extends LineArchetype{
         addFieldArchetype(ICMS_ST, faip142);
         addFieldArchetype(BASE_ST, faip142);
         addFieldArchetype(BC_IPI, faip142);
-        addFieldArchetype(CODIGO_TURBO_IPI, new FieldStringFixedLengthArchetype(1));
+        
+        FieldStringFixedLengthArchetype fs1 = new FieldStringFixedLengthArchetype(1);
+        fs1.setAcceptNullable(true);
+        fs1.setFullFiling(' ');
+        
+        addFieldArchetype(CODIGO_TURBO_IPI, fs1);
         addFieldArchetype(VALOR_IPI, faip142);
         addFieldArchetype(ISENTOS_IPI, faip142);
         addFieldArchetype(OUTRAS_IPI, faip142);
         addFieldArchetype(CONTRIBUENTE_ICMS, fef);
-        addFieldArchetype(OBSERVACAO_LINHA_LANCAMENTO, new FieldStringFixedLengthArchetype(30));
+        FieldStringFixedLengthArchetype fs30 = new FieldStringFixedLengthArchetype(30);
+        fs30.setAcceptNullable(true);
+        addFieldArchetype(OBSERVACAO_LINHA_LANCAMENTO, fs30);
         addFieldArchetype(N_SEQUENCIAL_LANCAMENTO, new FieldIntegerFixedLengthArchetype(2));
         addFieldArchetype(TIPO_ANTECIPACAO_TRIBUTARIA, new FieldStringFixedLengthArchetype(1));
         addFieldArchetype(ANULACAO_SERVICO_TRANSPORTE, new FieldStringFixedLengthArchetype(1));
         addFieldArchetype(APURACOES_DISTINTAS_IPI, new FieldStringFixedLengthArchetype(1));
         addFieldArchetype(VALOR_REDUZIDO_BASE_CALC_PIS_COFINS, faip142);
         addFieldArchetype(EXCLUIDAS, faip142);
-        addFieldArchetype(VENDA_ENTREGA_FUTURA, new FieldStringFixedLengthArchetype(1));
-        addFieldArchetype(OPER_PREST_MERC_SUJ_REGIME_ST_SAIDA, new FieldStringFixedLengthArchetype(1));
+        addFieldArchetype(VENDA_ENTREGA_FUTURA, fef);
+        addFieldArchetype(OPER_PREST_MERC_SUJ_REGIME_ST_SAIDA, fef);
         addFieldArchetype(NUMERO_TOTALIZADOR, new FieldStringFixedLengthArchetype(2));
         addFieldArchetype(ST_ICMS_TABELA_A, new FieldStringFixedLengthArchetype(2));// no manual diz 1, mas deve ser 2
         addFieldArchetype(ST_ICMS_TABELA_B, new FieldStringFixedLengthArchetype(2));
         addFieldArchetype(ST_IPI_CTIPI, new FieldStringFixedLengthArchetype(2));
-        addFieldArchetype(CIAP_SAIDA_TRIBUTADA, new FieldStringFixedLengthArchetype(1));
+        addFieldArchetype(CIAP_SAIDA_TRIBUTADA, fef);
         addFieldArchetype(CONTROLE_SISTEMA, new FieldStringFixedLengthArchetype(1));
 
         

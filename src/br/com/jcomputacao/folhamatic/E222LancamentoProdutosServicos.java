@@ -451,7 +451,11 @@ public class E222LancamentoProdutosServicos extends LineArchetype{
         
         addFieldArchetype(BASE_CALCULO_ICMS, faip142);
         addFieldArchetype(BASE_SUBSTITUICAO_TRIBUTARIA, faip142); 
-        addFieldArchetype(VALOR_IPI, faip142);
+        
+        FieldDecimalFixedLengthArchetype fdipi = new FieldDecimalFixedLengthArchetype(14, 2);
+        fdipi.setAcceptNullable(true);
+        fdipi.setFullFiling(' ');
+        addFieldArchetype(VALOR_IPI, fdipi);
         addFieldArchetype(VALOR_UNITARIO, faip144);
         addFieldArchetype(NUMERO_DI_DSI,new FieldIntegerFixedLengthArchetype(10) );
         addFieldArchetype(BC_IPI,faip142);

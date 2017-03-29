@@ -367,7 +367,7 @@ public class E200NotaFiscal extends LineArchetype {
         
         fef = new FieldEnumFixedLengthArchetype(1, FieldEnumFixedLengthArchetype.EnumType.STRING);
         fef.setAcceptNullable(true);
-        fef.setFullFiling('N');
+        fef.setFullFiling(' ');
         addFieldArchetype(NOTA_FISCAL_CONJUGADA, fef);
         addFieldArchetype(NUMERO_LINHAS_LANCAMENTO, new FieldIntegerFixedLengthArchetype(2));
         addFieldArchetype(DATA_LANCAMENTO_SISTEMA, faa);
