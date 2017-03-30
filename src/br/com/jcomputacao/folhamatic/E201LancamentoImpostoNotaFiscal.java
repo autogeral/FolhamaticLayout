@@ -190,25 +190,25 @@ public class E201LancamentoImpostoNotaFiscal extends LineArchetype{
     public static final String N_SEQUENCIAL_LANCAMENTO = "N_SEQUENCIAL_LANCAMENTO";
     
     /**
-     * TIPO DE ANTECIPAÇÃO TRIBUTÁRIA - Caso a nota contenha valor de ICMS Substituição</br>  
-     * Tributária (campo 18), informe o tipo de antecipação tributária conforme tabela abaixo:</br>  
-     * 0 - Substituição tributária informada pelo substituto ou pelo substituído que não incorra em</br>  
-     * nenhuma das situações anteriores.</br>  
-     * 1 - Pagamento de substituição efetuada pelo destinatário, quando não efetuada ou</br>  
-     * efetuada a menor pelo substituto</br>  
-     * 2 - Antecipação tributária efetuada pelo destinatário apenas com complementação do</br>  
-     * diferencial de alíquota</br>  
-     * 3 - Antecipação tributária com MVA(Margem de Valor Agregado), efetuada pelo</br>  
-     * destinatário sem encerrar a fase de tributação</br>  
-     * 4 - Antecipação tributária com MVA(Margem de Valor Agregado), efetuada pelo</br>  
-     * destinatário encerrando a fase de tributação</br>  
-     * 5 - Substituição Tributária interna motivada por regime especial de tributação.</br>  
-     * 6 - ICMS pago na importação.</br>  
-     * Campo obrigatório para a situação acima. Não existindo esta situação, deixe este campo</br>  
-     * vazio.</br>  
-     * OBS: Quando a nota possuir vários registros E201 com valor de ICMS Subst. Tribut., repita</br>  
-     * em todos os registros o mesmo código. Se for informado códigos diferentes para uma</br>  
-     * mesma nota, será considerado o código informado no último registro.</br>    
+     * <br>TIPO DE ANTECIPAÇÃO TRIBUTÁRIA - Caso a nota contenha valor de ICMS Substituição</br>  
+     * <br>Tributária (campo 18), informe o tipo de antecipação tributária conforme tabela abaixo:</br>  
+     * <br>0 - Substituição tributária informada pelo substituto ou pelo substituído que não incorra em</br>  
+     * <br>nenhuma das situações anteriores.</br>  
+     * <br>1 - Pagamento de substituição efetuada pelo destinatário, quando não efetuada ou</br>  
+     * <br>efetuada a menor pelo substituto</br>  
+     * <br>2 - Antecipação tributária efetuada pelo destinatário apenas com complementação do</br>  
+     * <br>diferencial de alíquota</br>  
+     * <br>3 - Antecipação tributária com MVA(Margem de Valor Agregado), efetuada pelo</br>  
+     * <br>destinatário sem encerrar a fase de tributação</br>  
+     * <br>4 - Antecipação tributária com MVA(Margem de Valor Agregado), efetuada pelo</br>  
+     * <br>destinatário encerrando a fase de tributação</br>  
+     * <br>5 - Substituição Tributária interna motivada por regime especial de tributação.</br>  
+     * <br>6 - ICMS pago na importação.</br>  
+     * <br>Campo obrigatório para a situação acima. Não existindo esta situação, deixe este campo</br>  
+     * <br>vazio.</br>  
+     * <br>OBS: Quando a nota possuir vários registros E201 com valor de ICMS Subst. Tribut., repita</br>  
+     * <br>em todos os registros o mesmo código. Se for informado códigos diferentes para uma</br>  
+     * <br>mesma nota, será considerado o código informado no último registro.</br>    
      */
     public static final String TIPO_ANTECIPACAO_TRIBUTARIA = "TIPO_ANTECIPACAO_TRIBUTARIA";
     
@@ -445,10 +445,11 @@ public class E201LancamentoImpostoNotaFiscal extends LineArchetype{
         
         addFieldArchetype(TIPO_PAGAMENTO, new FieldIntegerFixedLengthArchetype(1));
         addFieldArchetype(BC_ICMS, faip142);
-        FieldIntegerFixedLengthArchetype fi3 = new FieldIntegerFixedLengthArchetype(3);
-        fi3.setAcceptNullable(true);
-        fi3.setFullFiling(' ');
-        addFieldArchetype(CODIGO_TURBO, fi3);
+//        FieldIntegerFixedLengthArchetype fi3 = new FieldIntegerFixedLengthArchetype(3);
+//        fi3.setAcceptNullable(true);
+//        fi3.setFullFiling(' ');
+//        addFieldArchetype(CODIGO_TURBO, fi3);
+        addFieldArchetype(CODIGO_TURBO, new FieldIntegerFixedLengthArchetype(3));
         addFieldArchetype(REDUCAO_BASE_CALCULO_ICMS, faip063);
         addFieldArchetype(ALIQUOTA_ICMS, faip074);
         addFieldArchetype(VALOR_ICMS, faip142);
@@ -471,19 +472,20 @@ public class E201LancamentoImpostoNotaFiscal extends LineArchetype{
         fs30.setAcceptNullable(true);
         addFieldArchetype(OBSERVACAO_LINHA_LANCAMENTO, fs30);
         addFieldArchetype(N_SEQUENCIAL_LANCAMENTO, new FieldIntegerFixedLengthArchetype(2));
-        addFieldArchetype(TIPO_ANTECIPACAO_TRIBUTARIA, new FieldStringFixedLengthArchetype(1));
-        addFieldArchetype(ANULACAO_SERVICO_TRANSPORTE, new FieldStringFixedLengthArchetype(1));
-        addFieldArchetype(APURACOES_DISTINTAS_IPI, new FieldStringFixedLengthArchetype(1));
+        
+        addFieldArchetype(TIPO_ANTECIPACAO_TRIBUTARIA, fs1);
+        addFieldArchetype(ANULACAO_SERVICO_TRANSPORTE, fs1);
+        addFieldArchetype(APURACOES_DISTINTAS_IPI, fs1);
         addFieldArchetype(VALOR_REDUZIDO_BASE_CALC_PIS_COFINS, faip142);
         addFieldArchetype(EXCLUIDAS, faip142);
         addFieldArchetype(VENDA_ENTREGA_FUTURA, fef);
         addFieldArchetype(OPER_PREST_MERC_SUJ_REGIME_ST_SAIDA, fef);
-        addFieldArchetype(NUMERO_TOTALIZADOR, new FieldStringFixedLengthArchetype(2));
-        addFieldArchetype(ST_ICMS_TABELA_A, new FieldStringFixedLengthArchetype(2));// no manual diz 1, mas deve ser 2
-        addFieldArchetype(ST_ICMS_TABELA_B, new FieldStringFixedLengthArchetype(2));
-        addFieldArchetype(ST_IPI_CTIPI, new FieldStringFixedLengthArchetype(2));
+        addFieldArchetype(NUMERO_TOTALIZADOR, fs2);
+        addFieldArchetype(ST_ICMS_TABELA_A, fs1);// no manual diz 1, mas deve ser 2
+        addFieldArchetype(ST_ICMS_TABELA_B, fs2);
+        addFieldArchetype(ST_IPI_CTIPI, fs2);
         addFieldArchetype(CIAP_SAIDA_TRIBUTADA, fef);
-        addFieldArchetype(CONTROLE_SISTEMA, new FieldStringFixedLengthArchetype(1));
+        addFieldArchetype(CONTROLE_SISTEMA, new FieldDefaultArchetype("0"));
 
         
     }
