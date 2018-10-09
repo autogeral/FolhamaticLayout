@@ -405,7 +405,7 @@ public class E020ProdutosServicos extends LineArchetype {
     public static final String GRUPO_REGIME_ESPECIAL = "GRUPO_REGIME_ESPECIAL";
     /**
      * 39 - Tipo A Tamanho 60</br> 
-     * MARCA COMERCIAL</br>
+ MARCA_COMERCIAL COMERCIAL</br>
      * Informe a marca comercial que ser refere o produto.</br>
      * Somente preencha este campo, quando sua empresa</br>
      * estiver enquadrada no Regime Especial de Apuração</br>
@@ -417,7 +417,7 @@ public class E020ProdutosServicos extends LineArchetype {
      * Importante: A informação inserida neste campo deverá existir</br>
      * no menu Arquivos, Tabelas “Bebidas Frias - Anexo III”.</br>
      */
-    public static final String MARCA = "MARCA";
+    public static final String MARCA_COMERCIAL = "MARCA_COMERCIAL";
     /**
      * 40 - Tipo A Tamanho 5</br> 
      * CÓDIGO SEFAZ - MG</br>
@@ -546,7 +546,7 @@ public class E020ProdutosServicos extends LineArchetype {
         
         f = new FieldStringFixedLengthArchetype(60);
         f.setAcceptNullable(true);
-        addFieldArchetype(MARCA, f);
+        addFieldArchetype(MARCA_COMERCIAL, f);
         
         addFieldArchetype(CODIGO_SEFAZ_MG, f5);
         

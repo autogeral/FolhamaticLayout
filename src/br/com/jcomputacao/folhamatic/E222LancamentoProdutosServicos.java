@@ -443,7 +443,7 @@ public class E222LancamentoProdutosServicos extends LineArchetype{
         addFieldArchetype(CODIGO_CLIENTE_FORNECEDOR, new FieldStringFixedLengthArchetype(20));
         addFieldArchetype(NUMERO_ITEM, new FieldIntegerFixedLengthArchetype(3));
         addFieldArchetype(CFOP,  new FieldStringFixedLengthArchetype(4));
-        addFieldArchetype(CODIGO_PRODUTO_SERVICO,  new FieldStringFixedLengthArchetype(12));
+        addFieldArchetype(CODIGO_PRODUTO_SERVICO,  new FieldStringFixedLengthArchetype(14)); //esta 12, manual 14
         addFieldArchetype(ALIQUOTA_ICMS, faip074);
         addFieldArchetype(QUANTIDADE, faip155);
         addFieldArchetype(VALOR_MERCADORIA_SERVICO, faip142);
@@ -454,7 +454,7 @@ public class E222LancamentoProdutosServicos extends LineArchetype{
         
         FieldDecimalFixedLengthArchetype fdipi = new FieldDecimalFixedLengthArchetype(14, 2);
         fdipi.setAcceptNullable(true);
-        fdipi.setFullFiling(' ');
+        fdipi.setFullFiling('0');
         addFieldArchetype(VALOR_IPI, fdipi);
         addFieldArchetype(VALOR_UNITARIO, faip144);
         addFieldArchetype(NUMERO_DI_DSI,new FieldIntegerFixedLengthArchetype(10) );
@@ -473,12 +473,13 @@ public class E222LancamentoProdutosServicos extends LineArchetype{
         addFieldArchetype(ITEM_CANCELADO, fef);
         addFieldArchetype(OPERA_MERC_SUJEITA_REGUIME_ST_SAIDA, fef);
         addFieldArchetype(ISS, fef);
-        addFieldArchetype(CODIGO_UNIDADE_COMERCIAL,  new FieldStringFixedLengthArchetype(6));
+        addFieldArchetype(CODIGO_UNIDADE_COMERCIAL,  new FieldIntegerFixedLengthArchetype(6)); //Era String
         addFieldArchetype(CODIGO_NATUREZA_OPERACAO,  new FieldStringFixedLengthArchetype(10));
         addFieldArchetype(DESCRICAO_COMPLEMENTAR_PRODUTO,  new FieldStringFixedLengthArchetype(50));
         addFieldArchetype(FATOR_CONVERSAO, faip146);
         addFieldArchetype(ALIQUOTA_ICMS_ST, faip062);
-        addFieldArchetype(ST_ICMS_TABELA_A, new FieldStringFixedLengthArchetype(2));// no manual consta 1, mas acredito que são 2
+        //Alterado para 1
+        addFieldArchetype(ST_ICMS_TABELA_A, new FieldStringFixedLengthArchetype(1));// no manual consta 1, mas acredito que são 2
         addFieldArchetype(ST_ICMS_TABELA_B, new FieldStringFixedLengthArchetype(2));
         addFieldArchetype(ST_IPI,  new FieldStringFixedLengthArchetype(2));
         addFieldArchetype(APURACAO_DISTINTA_IPI,  new FieldStringFixedLengthArchetype(1));
@@ -503,6 +504,8 @@ public class E222LancamentoProdutosServicos extends LineArchetype{
         
         addFieldArchetype(DESCONTO_INCONDICIONAL, fefDI);
         addFieldArchetype(CSONS, new FieldStringFixedLengthArchetype(3));
+        //Alterado para o tamanho de um caractere
+        //addFieldArchetype(CONTROLE_SISTEMA, new FieldStringFixedLengthArchetype(1));
         addFieldArchetype(CONTROLE_SISTEMA, new FieldDefaultArchetype("0"));
         
     }

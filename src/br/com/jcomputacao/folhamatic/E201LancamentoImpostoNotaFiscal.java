@@ -435,7 +435,7 @@ public class E201LancamentoImpostoNotaFiscal extends LineArchetype{
         addFieldArchetype(ESPECIE_NOTA_FISCAL, new FieldStringFixedLengthArchetype(5));
         addFieldArchetype(SERIE_NOTA_FISCAL, new FieldStringFixedLengthArchetype(3));
         addFieldArchetype(SUBSERIE_NOTA_FISCAL, new FieldStringFixedLengthArchetype(2));
-        addFieldArchetype(NUMERO_NOTA_FISCAL, new FieldIntegerFixedLengthArchetype(10));
+        addFieldArchetype(NUMERO_NOTA_FISCAL, new FieldIntegerFixedLengthArchetype<Long>(10));
         addFieldArchetype(CODIGO_CLIENTE_FORNECEDOR, new FieldStringFixedLengthArchetype(20));
         addFieldArchetype(CFOP, new FieldIntegerFixedLengthArchetype(4));
         
@@ -464,7 +464,10 @@ public class E201LancamentoImpostoNotaFiscal extends LineArchetype{
         fs1.setFullFiling(' ');
         
         addFieldArchetype(CODIGO_TURBO_IPI, fs1);
-        addFieldArchetype(VALOR_IPI, faip142);
+        //No caso da Auto geral o IPI nunca é aproveitavel.
+        //Segundo a documentacao lançar a primeira posicao com sinal negativo
+        
+        addFieldArchetype(VALOR_IPI, faip142); 
         addFieldArchetype(ISENTOS_IPI, faip142);
         addFieldArchetype(OUTRAS_IPI, faip142);
         addFieldArchetype(CONTRIBUENTE_ICMS, fef);

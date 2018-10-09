@@ -5,6 +5,7 @@ import br.com.jcomputacao.aristoteles.field.FieldDecimalFixedLengthArchetype;
 import br.com.jcomputacao.aristoteles.field.FieldDefaultArchetype;
 import br.com.jcomputacao.aristoteles.field.FieldEnumFixedLengthArchetype;
 import br.com.jcomputacao.aristoteles.field.FieldIntegerFixedLengthArchetype;
+import br.com.jcomputacao.aristoteles.field.FieldIntegerMaximumLengthArchetype;
 import br.com.jcomputacao.aristoteles.field.FieldStringFixedLengthArchetype;
 import br.com.jcomputacao.aristoteles.line.LineArchetype;
 
@@ -333,6 +334,7 @@ public class E200NotaFiscal extends LineArchetype {
         FieldStringFixedLengthArchetype f2 = new FieldStringFixedLengthArchetype(2);
         f2.setAcceptNullable(true);
         addFieldArchetype(SUBSERIE_NOTA_FISCAL, f2);
+        
         addFieldArchetype(NUMERO_INICIAL_NOTA_FISCAL, new FieldIntegerFixedLengthArchetype<Long>(10));
         addFieldArchetype(NUMERO_FINAL_NOTA_FISCAL, new FieldIntegerFixedLengthArchetype<Long>(10));
         

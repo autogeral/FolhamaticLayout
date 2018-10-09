@@ -124,7 +124,7 @@ public class E212CreditoEstPisCofinsAutomatico extends LineArchetype{
         addFieldArchetype(ESPECIE_NOTA_FISCAL, new FieldStringFixedLengthArchetype(5));
         addFieldArchetype(SERIE_NOTA_FISCAL, new FieldStringFixedLengthArchetype(3));
         addFieldArchetype(SUBSERIE_NOTA_FISCAL, new FieldStringFixedLengthArchetype(2));
-        addFieldArchetype(NUMERO_NOTA_FISCAL, new FieldIntegerFixedLengthArchetype(10));
+        addFieldArchetype(NUMERO_NOTA_FISCAL, new FieldIntegerFixedLengthArchetype<Long>(10));
         addFieldArchetype(CODIGO_CLIENTE_FORNECEDOR, new FieldStringFixedLengthArchetype(20));
         addFieldArchetype(N_LINHA_LANCAMENTO, new FieldIntegerFixedLengthArchetype(2));
         addFieldArchetype(CREDITO_DESCONTO_ESTORNO_PIS_COFINS, faip142);
