@@ -1,6 +1,7 @@
 package br.com.jcomputacao.folhamatic;
 
 import br.com.jcomputacao.aristoteles.field.FieldDefaultArchetype;
+import br.com.jcomputacao.aristoteles.field.FieldEnumFixedLengthArchetype;
 import br.com.jcomputacao.aristoteles.field.FieldIntegerFixedLengthArchetype;
 import br.com.jcomputacao.aristoteles.field.FieldStringFixedLengthArchetype;
 import br.com.jcomputacao.aristoteles.line.LineArchetype;
@@ -93,8 +94,12 @@ public class E342ChaveDasNotasFiscais extends LineArchetype{
         
         setName("Folhamatica - Chaves das Notas NF-E / NFC-E / CT-E / CF-E");
         
+        FieldEnumFixedLengthArchetype fef = new FieldEnumFixedLengthArchetype(1, FieldEnumFixedLengthArchetype.EnumType.STRING);
+        fef.setAcceptNullable(true);
+        fef.setFullFillingNullable(true);
+        
         addFieldArchetype(NOME_REGISTRO, new FieldDefaultArchetype("E342"));
-        addFieldArchetype(ENTRADAS_OU_SAIDAS, new FieldStringFixedLengthArchetype(1));
+        addFieldArchetype(ENTRADAS_OU_SAIDAS, fef);
         addFieldArchetype(ESPECIE_NOTA_FISCAL, new FieldStringFixedLengthArchetype(5));
         addFieldArchetype(SERIE_NOTA_FISCAL, new FieldStringFixedLengthArchetype(3));
         addFieldArchetype(SUBSERIE_NOTA_FISCAL, new FieldStringFixedLengthArchetype(2));
