@@ -144,6 +144,12 @@ public class E201LancamentoImpostoNotaFiscal extends LineArchetype{
      */
     public static final String CODIGO_TURBO_IPI = "CODIGO_TURBO_IPI";
     
+    
+    /**
+     * Usado para colocar a primeira posicao como - para o ipi nao aproveitavel
+     */
+    public static final String SINAL_NEGATIVO_IPI_NAO_APROVEITAVEL = "SINAL_NEGATIVO_IPI_NAO_APROVEITAVEL";
+    
     /**
      * VALOR DO IPI - Informe o valor do IPI da linha de lançamento.</br>  
      * Preencher a 1ª posição deste campo com o sinal de negativo quando houver a situação de</br>  
@@ -407,6 +413,9 @@ public class E201LancamentoImpostoNotaFiscal extends LineArchetype{
         FieldDecimalFixedLengthArchetype faip142 = new FieldDecimalFixedLengthArchetype(14, 2);
         faip142.setAcceptNullable(true);
         
+        FieldDecimalFixedLengthArchetype faip132 = new FieldDecimalFixedLengthArchetype(13, 2);
+        faip142.setAcceptNullable(true);
+        
         FieldDecimalFixedLengthArchetype faip143 = new FieldDecimalFixedLengthArchetype(14, 3);
         faip143.setAcceptNullable(true);
         
@@ -467,7 +476,8 @@ public class E201LancamentoImpostoNotaFiscal extends LineArchetype{
         //No caso da Auto geral o IPI nunca é aproveitavel.
         //Segundo a documentacao lançar a primeira posicao com sinal negativo
         
-        addFieldArchetype(VALOR_IPI, faip142); 
+        addFieldArchetype(SINAL_NEGATIVO_IPI_NAO_APROVEITAVEL, fef);
+        addFieldArchetype(VALOR_IPI, faip132); 
         addFieldArchetype(ISENTOS_IPI, faip142);
         addFieldArchetype(OUTRAS_IPI, faip142);
         addFieldArchetype(CONTRIBUENTE_ICMS, fef);
