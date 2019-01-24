@@ -97,6 +97,9 @@ public class E222LancamentoProdutosServicos extends LineArchetype{
      * IPI não aproveitável.</br>
      * Quando se tratar de cupom fiscal, zerar este campo.</br>
      */
+    
+    public static final String SINAL_NEGATIVO_IPI_NAO_APROVEITAVEL = "SINAL_NEGATIVO_IPI_NAO_APROVEITAVEL";
+    
     public static final String VALOR_IPI = "VALOR_IPI";
      /**
      * VALOR UNITÁRIO - Informe o valor unitário do produto/serviço.</br>
@@ -414,6 +417,9 @@ public class E222LancamentoProdutosServicos extends LineArchetype{
         FieldDecimalFixedLengthArchetype faip14 = new FieldDecimalFixedLengthArchetype(14, 0);
         faip14.setAcceptNullable(true);
         
+        FieldDecimalFixedLengthArchetype faip132 = new FieldDecimalFixedLengthArchetype(13, 2);
+        faip132.setAcceptNullable(true);
+        
         FieldDecimalFixedLengthArchetype faip142 = new FieldDecimalFixedLengthArchetype(14, 2);
         faip142.setAcceptNullable(true);
         
@@ -455,7 +461,8 @@ public class E222LancamentoProdutosServicos extends LineArchetype{
         FieldDecimalFixedLengthArchetype fdipi = new FieldDecimalFixedLengthArchetype(14, 2);
         fdipi.setAcceptNullable(true);
         fdipi.setFullFiling('0');
-        addFieldArchetype(VALOR_IPI, fdipi);
+        addFieldArchetype(SINAL_NEGATIVO_IPI_NAO_APROVEITAVEL, fef);
+        addFieldArchetype(VALOR_IPI, faip132);
         addFieldArchetype(VALOR_UNITARIO, faip144);
         addFieldArchetype(NUMERO_DI_DSI,new FieldIntegerFixedLengthArchetype(10) );
         addFieldArchetype(BC_IPI,faip142);
