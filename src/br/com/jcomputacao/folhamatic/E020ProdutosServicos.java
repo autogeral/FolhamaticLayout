@@ -429,6 +429,12 @@ public class E020ProdutosServicos extends LineArchetype {
     public static final String CODIGO_SEFAZ_MG = "CODIGO_SEFAZ_MG";
     /**
      * 41
+     * CEST – Informe o Código Especificador da Substituição Tributária</br>
+     * ou preencha com espaços. Este campo é utilizado na geração da EFD.
+     */
+    public static final String CEST = "CEST";
+    /**
+     * 42
      * CONTROLE DO SISTEMA</br> 
      * Informe "0" (zero) para controle interno do Sistema E-Fiscal.</br> 
      */
@@ -549,6 +555,10 @@ public class E020ProdutosServicos extends LineArchetype {
         addFieldArchetype(MARCA_COMERCIAL, f);
         
         addFieldArchetype(CODIGO_SEFAZ_MG, f5);
+        
+        FieldStringFixedLengthArchetype f7 = new FieldStringFixedLengthArchetype(3);
+        f3.setAcceptNullable(true);
+        addFieldArchetype(CEST, f7);
         
         addFieldArchetype(CONTROLE_SISTEMA, new FieldDefaultArchetype("0"));
     }
