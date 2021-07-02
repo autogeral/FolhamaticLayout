@@ -51,7 +51,7 @@ public class E372DadosTransporteUfOrigemDestinoEntrada extends LineArchetype {
         fsf2.setAcceptNullable(true);
         fef.setFullFillingNullable(true);
 
-        FieldStringFixedLengthArchetype fsf7 = new FieldStringFixedLengthArchetype(2);
+        FieldStringFixedLengthArchetype fsf7 = new FieldStringFixedLengthArchetype(7);
         fsf7.setAcceptNullable(true);
         fef.setFullFillingNullable(true);
         
