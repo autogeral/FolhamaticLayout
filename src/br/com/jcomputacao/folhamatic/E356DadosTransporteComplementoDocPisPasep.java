@@ -60,7 +60,7 @@ public class E356DadosTransporteComplementoDocPisPasep extends LineArchetype {
         addFieldArchetype(SUBSERIE_NF, new FieldStringFixedLengthArchetype(2));
         addFieldArchetype(NUMERO_NF, new FieldIntegerFixedLengthArchetype<Long>(10));
         addFieldArchetype(CODIGO_DO_FORNECEDOR, new FieldStringFixedLengthArchetype(20));
-        addFieldArchetype(NATUREZA_DO_FRETE, new FieldStringFixedLengthArchetype(1));
+        addFieldArchetype(NATUREZA_DO_FRETE, new FieldDefaultArchetype("2"));
         addFieldArchetype(VALOR_TOTAL_DOS_ITENS, faip142);
         addFieldArchetype(SIT_TRIB_PIS, new FieldIntegerFixedLengthArchetype(2));
 //        01 Aquisição de bens para revenda
