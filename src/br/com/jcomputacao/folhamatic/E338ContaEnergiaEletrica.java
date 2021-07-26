@@ -198,7 +198,7 @@ public class E338ContaEnergiaEletrica extends LineArchetype {
         FieldDecimalFixedLengthArchetype faip142 = new FieldDecimalFixedLengthArchetype(14, 2);
         faip142.setAcceptNullable(true);
         
-        FieldStringFixedLengthArchetype fa = new FieldStringFixedLengthArchetype(20);
+        FieldStringFixedLengthArchetype fa = new FieldStringFixedLengthArchetype(2);
         fa.setAcceptNullable(true);
         fa.setFullFiling(' ');
         
@@ -214,14 +214,14 @@ public class E338ContaEnergiaEletrica extends LineArchetype {
         addFieldArchetype(NUMERO_NOTA_FISCAL, new FieldIntegerFixedLengthArchetype<Long>(10));
         addFieldArchetype(CODIGO_CLIENTE, new FieldStringFixedLengthArchetype(20));
         addFieldArchetype(TIPO_NOTA, fef);
-        addFieldArchetype(CODIGO_CLASSE_CONSUMO, new FieldStringFixedLengthArchetype(2));
+        addFieldArchetype(CODIGO_CLASSE_CONSUMO, fa);
         
         addFieldArchetype(VALOR_TOTAL_FORNECIDO_CONSUMIDO, new FieldIntegerFixedLengthArchetype<Long>(14));
         addFieldArchetype(SERVICO_NAO_TRIBUTADOS_ICMS, new FieldIntegerFixedLengthArchetype<Long>(14));
         addFieldArchetype(VALOR_TOTAL_COBRADO_NOME_TERCEIRO, new FieldIntegerFixedLengthArchetype<Long>(14));
         
         addFieldArchetype(DOCUMENTO_ABRANGIDO_CONVENIO_ICMS, fef);
-        addFieldArchetype(MUNICIPIO_PONTOS_CONSUMO, new FieldStringFixedLengthArchetype(7));
+        addFieldArchetype(MUNICIPIO_PONTOS_CONSUMO, new FieldIntegerFixedLengthArchetype<Long>(7));
         addFieldArchetype(CONSUMO_TOTAL_KWH, new FieldIntegerFixedLengthArchetype<Long>(14));
         addFieldArchetype(NOME_ARQUIVO_MESTRE, new FieldStringFixedLengthArchetype(33));
         addFieldArchetype(CHAVE_ARQUIVO_MESTRE, new FieldStringFixedLengthArchetype(32));
