@@ -203,7 +203,7 @@ public class E338ContaEnergiaEletrica extends LineArchetype {
         fa.setFullFiling(' ');
         
         addFieldArchetype(NOME_REGISTRO, new FieldDefaultArchetype("E338"));
-        addFieldArchetype(TIPO_NOTA_FISCAL, fef);
+        addFieldArchetype(TIPO_NOTA_FISCAL,new FieldStringFixedLengthArchetype(1));
         addFieldArchetype(ESPECIE_NOTA_FISCAL, new FieldStringFixedLengthArchetype(5));
         addFieldArchetype(SERIE_NOTA_FISCAL, new FieldStringFixedLengthArchetype(3));
         
@@ -220,14 +220,14 @@ public class E338ContaEnergiaEletrica extends LineArchetype {
         addFieldArchetype(SERVICO_NAO_TRIBUTADOS_ICMS, new FieldIntegerFixedLengthArchetype<Long>(14));
         addFieldArchetype(VALOR_TOTAL_COBRADO_NOME_TERCEIRO, new FieldIntegerFixedLengthArchetype<Long>(14));
         
-        addFieldArchetype(DOCUMENTO_ABRANGIDO_CONVENIO_ICMS, fef);
+        addFieldArchetype(DOCUMENTO_ABRANGIDO_CONVENIO_ICMS, new FieldStringFixedLengthArchetype(1));
         addFieldArchetype(MUNICIPIO_PONTOS_CONSUMO, new FieldIntegerFixedLengthArchetype<Long>(7));
         addFieldArchetype(CONSUMO_TOTAL_KWH, new FieldIntegerFixedLengthArchetype<Long>(14));
         addFieldArchetype(NOME_ARQUIVO_MESTRE, new FieldStringFixedLengthArchetype(33));
         addFieldArchetype(CHAVE_ARQUIVO_MESTRE, new FieldStringFixedLengthArchetype(32));
         
-        addFieldArchetype(CODIGO_TIPO_LIGACAO, fef);
+        addFieldArchetype(CODIGO_TIPO_LIGACAO, new FieldStringFixedLengthArchetype(1));
         addFieldArchetype(CODIGO_GRUPO_TENSAO, new FieldStringFixedLengthArchetype(2));
-        addFieldArchetype(CONTROLE_SISTEMA, new FieldIntegerFixedLengthArchetype<Long>(1));
+        addFieldArchetype(CONTROLE_SISTEMA, new FieldStringFixedLengthArchetype(1));
      }
 }

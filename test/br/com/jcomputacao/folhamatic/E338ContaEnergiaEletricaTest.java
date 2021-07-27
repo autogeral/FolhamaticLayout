@@ -49,28 +49,28 @@ public class E338ContaEnergiaEletricaTest {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         Date data = sdf.parse("01/01/2017");
         
-        lm.setFieldValue(E338ContaEnergiaEletrica.TIPO_NOTA_FISCAL, data);
+        lm.setFieldValue(E338ContaEnergiaEletrica.TIPO_NOTA_FISCAL, " ");
         lm.setFieldValue(E338ContaEnergiaEletrica.ESPECIE_NOTA_FISCAL, "NFCEE");
-        lm.setFieldValue(E338ContaEnergiaEletrica.SERIE_NOTA_FISCAL, "C  ");
+        lm.setFieldValue(E338ContaEnergiaEletrica.SERIE_NOTA_FISCAL, " C ");
         
         lm.setFieldValue(E338ContaEnergiaEletrica.SUBSERIE_NOTA_FISCAL, "  ");
         lm.setFieldValue(E338ContaEnergiaEletrica.NUMERO_NOTA_FISCAL, 987654321);
-        lm.setFieldValue(E338ContaEnergiaEletrica.CODIGO_CLIENTE, "101");
+        lm.setFieldValue(E338ContaEnergiaEletrica.CODIGO_CLIENTE, "   ");
         lm.setFieldValue(E338ContaEnergiaEletrica.TIPO_NOTA, null);
         
         lm.setFieldValue(E338ContaEnergiaEletrica.CODIGO_CLASSE_CONSUMO, null);
         lm.setFieldValue(E338ContaEnergiaEletrica.VALOR_TOTAL_FORNECIDO_CONSUMIDO,     987654321);
         lm.setFieldValue(E338ContaEnergiaEletrica.SERVICO_NAO_TRIBUTADOS_ICMS,     987654321);
         lm.setFieldValue(E338ContaEnergiaEletrica.VALOR_TOTAL_COBRADO_NOME_TERCEIRO,     987654321);
-        lm.setFieldValue(E338ContaEnergiaEletrica.DOCUMENTO_ABRANGIDO_CONVENIO_ICMS, null);
+        lm.setFieldValue(E338ContaEnergiaEletrica.DOCUMENTO_ABRANGIDO_CONVENIO_ICMS, " ");
         lm.setFieldValue(E338ContaEnergiaEletrica.MUNICIPIO_PONTOS_CONSUMO, 654321);
-        
-        lm.setFieldValue(E338ContaEnergiaEletrica.CONSUMO_TOTAL_KWH,     987654321);
+         
+        lm.setFieldValue(E338ContaEnergiaEletrica.CONSUMO_TOTAL_KWH,    987654321);
         lm.setFieldValue(E338ContaEnergiaEletrica.NOME_ARQUIVO_MESTRE, "                                 ");
         lm.setFieldValue(E338ContaEnergiaEletrica.CHAVE_ARQUIVO_MESTRE, "                                ");
-        lm.setFieldValue(E338ContaEnergiaEletrica.CODIGO_TIPO_LIGACAO, null);
+        lm.setFieldValue(E338ContaEnergiaEletrica.CODIGO_TIPO_LIGACAO, " ");
         lm.setFieldValue(E338ContaEnergiaEletrica.CODIGO_GRUPO_TENSAO, "  ");
-        lm.setFieldValue(E338ContaEnergiaEletrica.CONTROLE_SISTEMA, 0);
+        lm.setFieldValue(E338ContaEnergiaEletrica.CONTROLE_SISTEMA, "0");
         
         StringBuffer sb = lm.getRepresentation();
         assertNotNull(sb);
