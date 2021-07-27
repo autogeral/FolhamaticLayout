@@ -59,9 +59,9 @@ public class E338ContaEnergiaEletricaTest {
         lm.setFieldValue(E338ContaEnergiaEletrica.TIPO_NOTA, null);
         
         lm.setFieldValue(E338ContaEnergiaEletrica.CODIGO_CLASSE_CONSUMO, null);
-        lm.setFieldValue(E338ContaEnergiaEletrica.VALOR_TOTAL_FORNECIDO_CONSUMIDO,     987654321);
-        lm.setFieldValue(E338ContaEnergiaEletrica.SERVICO_NAO_TRIBUTADOS_ICMS,     987654321);
-        lm.setFieldValue(E338ContaEnergiaEletrica.VALOR_TOTAL_COBRADO_NOME_TERCEIRO,     987654321);
+        lm.setFieldValue(E338ContaEnergiaEletrica.VALOR_TOTAL_FORNECIDO_CONSUMIDO, null);
+        lm.setFieldValue(E338ContaEnergiaEletrica.SERVICO_NAO_TRIBUTADOS_ICMS, null);
+        lm.setFieldValue(E338ContaEnergiaEletrica.VALOR_TOTAL_COBRADO_NOME_TERCEIRO, null);
         lm.setFieldValue(E338ContaEnergiaEletrica.DOCUMENTO_ABRANGIDO_CONVENIO_ICMS, " ");
         lm.setFieldValue(E338ContaEnergiaEletrica.MUNICIPIO_PONTOS_CONSUMO, 654321);
          

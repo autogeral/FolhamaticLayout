@@ -216,9 +216,9 @@ public class E338ContaEnergiaEletrica extends LineArchetype {
         addFieldArchetype(TIPO_NOTA, fef);
         addFieldArchetype(CODIGO_CLASSE_CONSUMO, fa);
         
-        addFieldArchetype(VALOR_TOTAL_FORNECIDO_CONSUMIDO, new FieldIntegerFixedLengthArchetype<Long>(14));
-        addFieldArchetype(SERVICO_NAO_TRIBUTADOS_ICMS, new FieldIntegerFixedLengthArchetype<Long>(14));
-        addFieldArchetype(VALOR_TOTAL_COBRADO_NOME_TERCEIRO, new FieldIntegerFixedLengthArchetype<Long>(14));
+        addFieldArchetype(VALOR_TOTAL_FORNECIDO_CONSUMIDO, faip142);
+        addFieldArchetype(SERVICO_NAO_TRIBUTADOS_ICMS, faip142);
+        addFieldArchetype(VALOR_TOTAL_COBRADO_NOME_TERCEIRO, faip142);
         
         addFieldArchetype(DOCUMENTO_ABRANGIDO_CONVENIO_ICMS, new FieldStringFixedLengthArchetype(1));
         addFieldArchetype(MUNICIPIO_PONTOS_CONSUMO, new FieldIntegerFixedLengthArchetype<Long>(7));
