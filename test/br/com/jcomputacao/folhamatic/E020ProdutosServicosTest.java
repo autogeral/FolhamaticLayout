@@ -25,10 +25,19 @@ public class E020ProdutosServicosTest {
 
     @Test
     public void testSomeMethod() {
+        System.setProperty("fileGenerator.debug", "true");
         E020ProdutosServicos e = new E020ProdutosServicos();
         LineModel lm = e.createModel();
         lm.setFieldValue(E020ProdutosServicos.CODIGO_PRODUTO_SERVICO, "000001A");
         lm.setFieldValue(E020ProdutosServicos.DESCRICAO, "Produto Bananinha");
+        lm.setFieldValue(E020ProdutosServicos.TIPO_INVENTARIO, 1);
+        lm.setFieldValue(E020ProdutosServicos.NBM, "0000.00.00");
+        lm.setFieldValue(E020ProdutosServicos.CODIGO_UNIDADE_COMERCIAL, 1);
+        lm.setFieldValue(E020ProdutosServicos.CODIGO_UNIDADE_ESTOQUE, 1);
+        lm.setFieldValue(E020ProdutosServicos.IPI_ALIQUOTA, 0.05);
+        lm.setFieldValue(E020ProdutosServicos.IPI_SITUACAO_TRIBUTARIA, "10");
+        lm.setFieldValue(E020ProdutosServicos.CEST, "");
+        
         
         String line = lm.getRepresentation().toString();
         System.out.println("\"" + line + "\"");
